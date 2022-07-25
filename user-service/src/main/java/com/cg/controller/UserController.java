@@ -39,9 +39,16 @@ public class UserController {
 	private LoginService user;
 	@Autowired
 	private UserServiceImplementation service;
+	
+	 /* Name:Abhijeet kant
+	  * EmpId: 46195747
+	  * Creation Date:24/07/22
+	  * Modification Date:25/07/22
+	  * 
+	  */
 
-//	@Autowired
-//	private RestTemplate restTemplate;
+	@Autowired
+	private RestTemplate restTemplate;
 
 	@PostMapping("/adduser")
 	@ApiOperation(value = "Adds new Customer's details")
@@ -76,44 +83,44 @@ public class UserController {
 	}
 
 	/*-------------------Resttemplates----------------------------- */
-//
-//	@GetMapping("/allpacks")
-//	@ApiOperation(value = "Gets all packs")
-//	public List<Washpacks> getwashpacks() {
-//		String baseurl = "http://localhost:8081/admin/allpacks";
-//		Washpacks[] wp = restTemplate.getForObject(baseurl, Washpacks[].class);
-//		return Arrays.asList(wp);
-//	}
-//
-//	@PostMapping("/addorder")
-//	@ApiOperation(value = "Customer can add new order")
-//	public String addorder(@RequestBody OrderDetails order) {
-//		HttpHeaders headers = new HttpHeaders();
-//		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-//		HttpEntity<OrderDetails> entity = new HttpEntity<OrderDetails>(order, headers);
-//
-//		return restTemplate.exchange("http://localhost:8083/order/addorder", HttpMethod.POST, entity, String.class)
-//				.getBody();
-//	}
-//
-//	@DeleteMapping("/cancelorder")
-//	@ApiOperation(value = "Customer can cancel order")
-//	public String deleteorder(@RequestParam int id) {
-//		String baseurl = "http://localhost:8083/order/cancelorder";
-//		OrderDetails order = restTemplate.getForObject(baseurl, OrderDetails.class);
-//		return "Your Order is successfully Canceled " + order;
-//	}
-//
-//	@PostMapping("/addratings")
-//	@ApiOperation(value = "Customer can give ratings to washers")
-//	public String addrating(@RequestBody UserRating rating) {
-//		HttpHeaders headers = new HttpHeaders();
-//		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-//		HttpEntity<UserRating> entity = new HttpEntity<UserRating>(rating, headers);
-//
-//		return restTemplate.exchange("http://localhost:8081/admin/addratings", HttpMethod.POST, entity, String.class)
-//				.getBody();
-//	}
-//
+
+	@GetMapping("/allpacks")
+	@ApiOperation(value = "Gets all packs")
+	public List<Washpacks> getwashpacks() {
+		String baseurl = "http://localhost:8081/admin/allpacks";
+		Washpacks[] wp = restTemplate.getForObject(baseurl, Washpacks[].class);
+		return Arrays.asList(wp);
+	}
+
+	@PostMapping("/addorder")
+	@ApiOperation(value = "Customer can add new order")
+	public String addorder(@RequestBody OrderDetails order) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		HttpEntity<OrderDetails> entity = new HttpEntity<OrderDetails>(order, headers);
+
+		return restTemplate.exchange("http://localhost:8083/order/addorder", HttpMethod.POST, entity, String.class)
+				.getBody();
+	}
+
+	@DeleteMapping("/cancelorder")
+	@ApiOperation(value = "Customer can cancel order")
+	public String deleteorder(@RequestParam int id) {
+		String baseurl = "http://localhost:8083/order/cancelorder";
+		OrderDetails order = restTemplate.getForObject(baseurl, OrderDetails.class);
+		return "Your Order is successfully Canceled " + order;
+	}
+
+	@PostMapping("/addratings")
+	@ApiOperation(value = "Customer can give ratings to washers")
+	public String addrating(@RequestBody UserRating rating) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		HttpEntity<UserRating> entity = new HttpEntity<UserRating>(rating, headers);
+
+		return restTemplate.exchange("http://localhost:8081/admin/addratings", HttpMethod.POST, entity, String.class)
+				.getBody();
+	}
+
 
 }

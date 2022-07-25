@@ -29,7 +29,12 @@ public class WasherController
     @Autowired
 	private WasherService service;
     
-
+    /* Name:Abhijeet kant
+     * EmpId: 46195747
+     * Creation Date:22/07/22
+     * Modification Date:23/07/22
+     * 
+     */
     
     @PostMapping("/addwasher")
     @ApiOperation(value = "To Add washer Details")

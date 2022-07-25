@@ -59,21 +59,21 @@ public class AdminServiceImplementation implements AdminService {
 	}
 
 	@Override
-	public void savePack(Washpack Washpacks) {
+	public void saveWashpack(Washpack washpacks) {
 		// TODO Auto-generated method stub
-		wash_repo.save(Washpacks);
+		wash_repo.save(washpacks);
 
 	}
 
 	@Override
-	public void updatePack(Washpack updatepack) {
+	public void updateWashpack(Washpack updatepack) {
 		// TODO Auto-generated method stub
 		wash_repo.save(updatepack);
 
 	}
 
 	@Override
-	public void deletePack(int id) {
+	public void deleteWashpack(int id) {
 		// TODO Auto-generated method stub
 		wash_repo.deleteById(id);
 

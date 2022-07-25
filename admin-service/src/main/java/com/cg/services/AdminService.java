@@ -22,9 +22,9 @@ public interface AdminService {
 	
 	//washpacks
 	public List<Washpack> getWashpack();
-	public void savePack(Washpack Washpacks);
-	public void updatePack(Washpack updatepack);
-	public void deletePack(int id);
+	public void saveWashpack(Washpack washpacks);
+	public void updateWashpack(Washpack updatepack);
+	public void deleteWashpack(int id);
 	
 	
 	
