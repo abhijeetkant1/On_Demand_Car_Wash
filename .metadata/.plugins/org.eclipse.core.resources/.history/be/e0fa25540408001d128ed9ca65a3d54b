@@ -1,0 +1,23 @@
+package com.cg.models;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="orderdetailsdb")
+public class OrderDetails 
+{
+	private Long orderId;
+    private String carName;
+    private String carModel;
+    private String username;
+    private String date;
+    private Long contactno;
+    private String address;
+    private int washpackId;
+    
+    public OrderDetails()
+    {
+    	super();
+    }
+    
+    
+}

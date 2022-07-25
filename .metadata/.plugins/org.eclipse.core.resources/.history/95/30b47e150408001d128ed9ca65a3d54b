@@ -1,0 +1,13 @@
+package com.cg.models;
+
+public class OrderDetails 
+{
+	private Long orderId;
+    private String carName;
+    private String carModel;
+    private String username;
+    private String date;
+    private Long contactno;
+    private String address;
+    private int washpackId;
+}

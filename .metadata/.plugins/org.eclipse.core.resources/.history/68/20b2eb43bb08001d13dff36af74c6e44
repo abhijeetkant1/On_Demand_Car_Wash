@@ -1,0 +1,54 @@
+package com.cg.services;
+
+import java.util.List;
+import java.util.Objects;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Service;
+
+import com.cg.models.DatabaseSequence;
+import com.cg.models.OrderDetails;
+import com.cg.repository.OrderRepo;
+
+@Service
+public class OrderServiceImplementation implements OrderService{
+
+	@Autowired
+	private OrderRepo repo;
+
+	@Override
+	public OrderDetails addOrder(OrderDetails order) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<OrderDetails> orderdetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OrderDetails updateOrder(OrderDetails update) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Long getSequenceNumber(String sequenceName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

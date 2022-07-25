@@ -1,0 +1,36 @@
+package com.cg.services;
+
+
+
+import java.util.List;
+
+import com.cg.models.Admin;
+import com.cg.models.UserRating;
+
+public interface AdminService {
+	
+	//Admin
+	public List<Admin> findAll();
+	public void saveadmin(Admin admin);
+	public void updateadmin(Admin admin);
+	public void deleteadmin(int id);
+	
+	//Ratings
+	public List<UserRating> getuser();
+	public void save(UserRating ratings);
+	
+	//washpacks
+	public List<Washpack> getwashpack();
+	public void savepack(Washpack Washpacks);
+	public void updatepack(Washpack updatepack);
+	public void deletepack(int id);
+	
+	
+	
+	
+	
+	
+	    
+	
+
+}

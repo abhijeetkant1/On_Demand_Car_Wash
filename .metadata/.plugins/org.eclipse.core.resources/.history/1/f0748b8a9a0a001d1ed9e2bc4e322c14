@@ -1,0 +1,4 @@
+server.port=8083
+spring.data.mongodb.uri=
+spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+spring.application.name=order-service

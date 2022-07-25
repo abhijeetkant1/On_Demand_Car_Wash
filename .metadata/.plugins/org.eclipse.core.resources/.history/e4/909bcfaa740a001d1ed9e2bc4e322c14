@@ -1,0 +1,31 @@
+package com.cg.models;
+
+import javax.validation.constraints.NotEmpty;
+
+
+import javax.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "userdetailsdb")
+public class OrderDetails 
+{
+	@Id
+	private int id;
+	
+	private String CarName;
+    @NotEmpty(message="carname should not be empty")
+	private String Model;
+    @NotEmpty(message="model should not be empty")
+	private String washerName;
+    @NotEmpty(message="washername should not be empty")
+	private int washpackId;
+    @NotNull(message="washpackageid should not be empty")
+	private String Date;
+    @NotNull(message="preffered should not be empty")
+    @NotNull(message="contactNo should not be empty")
+	private long contact;
+	
+	
+}

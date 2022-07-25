@@ -1,0 +1,10 @@
+package com.cg.repository;
+
+
+	public interface WasherRepo extends MongoRepository<Washers, Integer> {
+
+		List<Washers> findBylocation(String location);
+		
+		Washers findByName(String name);
+
+}

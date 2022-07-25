@@ -1,0 +1,28 @@
+package com.cg.models;
+
+
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "userdetailsdb")
+public class OrderDetails 
+{
+	@Id
+	private int id;
+	
+	private String CarName;
+
+	private String Model;
+
+	private String washerName;
+	
+	private int washpackId;
+	
+	private String Date;
+
+	private long contact;
+	
+	
+}

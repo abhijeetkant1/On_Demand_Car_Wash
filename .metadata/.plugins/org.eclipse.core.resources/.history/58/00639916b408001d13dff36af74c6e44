@@ -1,0 +1,40 @@
+package com.cg.services;
+
+import java.util.List;
+
+import com.cg.models.OrderDetails;
+
+public class OrderServiceImplementation implements OrderService{
+
+	@Override
+	public void addOrder(OrderDetails order) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<OrderDetails> orderdetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateOrder(OrderDetails update) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteById(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Long getSequenceNumber(String sequenceName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

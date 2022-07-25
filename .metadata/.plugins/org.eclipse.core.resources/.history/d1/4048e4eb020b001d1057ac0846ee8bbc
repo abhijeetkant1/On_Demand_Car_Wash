@@ -1,0 +1,17 @@
+package com.cg.services;
+
+import com.cg.models.Washers;
+import java.util.List;
+
+public interface WasherService {
+
+	public void save(Washers user);
+
+	public void updateWasherDetails(int id, Washers user);
+
+	public List<Washers> getWashers();
+
+	void deleteWasher(int id);
+
+	public long getSequenceNumber(String sequenceName);
+}
