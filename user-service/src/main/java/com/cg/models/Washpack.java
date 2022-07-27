@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="washpackdb")
-public class Washpacks {
+public class Washpack {
 	
 	@Id
 	private Integer id;
@@ -13,7 +13,7 @@ public class Washpacks {
 	private String description;
 
 	
-	public Washpacks() {
+	public Washpack() {
 		super();
 	}
 	public Integer getId() {

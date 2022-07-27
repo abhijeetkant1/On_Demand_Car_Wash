@@ -3,9 +3,13 @@ package com.cg.services;
 
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.exception.AdminNotFoundException;
+import com.cg.exception.WashpackNotFoundException;
 import com.cg.models.Admin;
 import com.cg.models.UserRating;
 import com.cg.models.Washpack;
@@ -18,36 +22,51 @@ import com.cg.repository.WashRepo;
 public class AdminServiceImplementation implements AdminService {
 
 	@Autowired
-	private AdminRepo admin_repo;
+	private AdminRepo adminrepo;
 	@Autowired
-	private RatingRepo rating_repo;
+	private RatingRepo ratingrepo;
 	@Autowired
-	private WashRepo wash_repo;
+	private WashRepo washrepo;
 
 	@Override
 	public List<Admin> findAll() {
 		// TODO Auto-generated method stub
-		return admin_repo.findAll();
+		List<Admin> admin=adminrepo.findAll();
+		return admin;
 	}
 
 	@Override
 	public void saveAdmin(Admin admin) {
 		// TODO Auto-generated method stub
-		admin_repo.save(admin);
+		adminrepo.save(admin);
 
 	}
 
 	@Override
 	public void updateAdmin(Admin admin) {
 		// TODO Auto-generated method stub
-		admin_repo.save(admin);
+		Optional<Admin> optionalAdmin = adminrepo.findById(admin.getId());
 
+		if (optionalAdmin == null) {
+			throw new AdminNotFoundException("Admin not exising with id: " + admin.getId());
+		}
+		adminrepo.save(admin);
+		
 	}
 
 	@Override
 	public void deleteAdmin(int id) {
 		// TODO Auto-generated method stub
-		admin_repo.deleteById(id);
+		
+		Optional<Admin> optionalAdmin = adminrepo.findById(id);
+
+		if (optionalAdmin == null) {
+			throw new AdminNotFoundException("Admin not exising with id: " + id);
+		}
+
+		Admin student = optionalAdmin.get();
+
+		adminrepo.delete(student);
 
 	}
 
@@ -55,40 +74,54 @@ public class AdminServiceImplementation implements AdminService {
 	@Override
 	public List<Washpack> getWashpack() {
 		// TODO Auto-generated method stub
-		return wash_repo.findAll();
+		List<Washpack> washpack=washrepo.findAll();
+		return washpack;
 	}
 
 	@Override
-	public void saveWashpack(Washpack washpacks) {
-		// TODO Auto-generated method stub
-		wash_repo.save(washpacks);
+	public void saveWashpack(Washpack washpacks) 
+	{
+		washrepo.save(washpacks);
 
 	}
 
 	@Override
 	public void updateWashpack(Washpack updatepack) {
-		// TODO Auto-generated method stub
-		wash_repo.save(updatepack);
+		Optional<Washpack> optionalWashpack = washrepo.findById(updatepack.getId());
 
+		if (optionalWashpack == null) {
+			throw new WashpackNotFoundException("Washpack not exising with id: " + updatepack.getId());
+		}
+
+		 washrepo.save(updatepack);
 	}
 
 	@Override
 	public void deleteWashpack(int id) {
 		// TODO Auto-generated method stub
-		wash_repo.deleteById(id);
+		Optional<Washpack> optionalWashpack = washrepo.findById(id);
+
+		if (optionalWashpack == null) {
+			throw new WashpackNotFoundException("Washpack not exising with id: " + id);
+		}
+
+		Washpack wash = optionalWashpack.get();
+
+		washrepo.delete(wash);
 
 	}
 
 	@Override
 	public List<UserRating> getUser() {
 		// TODO Auto-generated method stub
-		return rating_repo.findAll();
+		List<UserRating> rating=ratingrepo.findAll();
+		return rating;
 	}
 
 	@Override
 	public void save(UserRating ratings) {
 		// TODO Auto-generated method stub
-		rating_repo.save(ratings);
+		ratingrepo.save(ratings);
 		
 	}
 

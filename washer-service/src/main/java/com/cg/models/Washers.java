@@ -12,7 +12,7 @@ public class Washers {
     public static String getSequenceName() {
 		return SEQUENCE_NAME; }
 	@Id
-	private Long id;
+	private int id;
 	private String name;
 	private String location;
 	private String password;
@@ -21,7 +21,7 @@ public class Washers {
 		super();
 	}
 
-	public Washers(Long id, String name, String location, String password) {
+	public Washers(int id, String name, String location, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -29,11 +29,11 @@ public class Washers {
 		this.password = password;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

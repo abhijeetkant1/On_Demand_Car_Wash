@@ -58,7 +58,7 @@ public class OrderController
 
 	@DeleteMapping("/cancelorder/{id}")
 	@ApiOperation(value = "Deletes order by Id")
-	public ResponseEntity<Object> deletorder(@RequestParam int id) {
+	public ResponseEntity<Object> deletorder(@RequestParam Long id) {
 		boolean isOrderExist = orderservice.existsById(id);
 		if (isOrderExist) {
 			orderservice.deleteById(id);

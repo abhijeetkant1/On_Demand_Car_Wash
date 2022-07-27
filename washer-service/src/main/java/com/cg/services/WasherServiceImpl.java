@@ -21,42 +21,47 @@ import com.cg.repository.WasherRepo;
 public class WasherServiceImpl implements WasherService
 {
 	@Autowired
-	private WasherRepo repo1;
+	private WasherRepo repo;
 
 
 
 	@Override
 	public void save(Washers washer) {
 		// TODO Auto-generated method stub
-		repo1.save(washer);
+		repo.save(washer);
 		
 	}
 
 	@Override
     public Washers updateWasherDetails(Washers washer) {
         // TODO Auto-generated method stub 
-        Optional<Washers> optionalWasher = repo1.findById(washer.getId());
+        Optional<Washers> optionalWasher = repo.findById(washer.getId());
 
         if (optionalWasher == null) {
             throw new WasherNotFoundException("Washer not exising with id: " + washer.getId());
         }
 
-        Washers updateWasher = repo1.save(washer);
+        Washers updateWasher = repo.save(washer);
 
         return updateWasher;
     }
 
-	@Override
-	public void deleteWasher(int id) {
-		// TODO Auto-generated method stub
-		 repo1.deleteById(id);
+		@Override
+	    public void deleteWasher(int id) { 
+	        Optional<Washers> optionalWasher = repo.findById(id);
+
+	        if (optionalWasher == null) {
+	            throw new WasherNotFoundException("Washer not existing with id: " + id);
+	        }
+	        Washers washer = optionalWasher.get();
+	        repo.delete(washer);
+	    } 
 		
-	}
 
 	@Override
 	public List<Washers> getWashers() {
 		// TODO Auto-generated method stub
-		return repo1.findAll();
+		return repo.findAll();
 	
 	}
 	@Autowired

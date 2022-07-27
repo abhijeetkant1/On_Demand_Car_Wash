@@ -30,8 +30,10 @@ public class UserServiceImplementation implements UserService{
 	
 	
 	@Override
-	public Signup addUser(Signup signup) {
-		return repo.save(signup);
+	public Signup addUser(Signup signup)
+	{
+		Signup addUser=repo.save(signup);
+		return addUser;
 	
 	}
 
@@ -43,13 +45,11 @@ public class UserServiceImplementation implements UserService{
 
 	@Override
 	public Signup Updateuser(Signup update) {
-//		   repo.save(update);
-//		    return "user updated";
 		    
-		    Optional<Signup> optionalWasher = repo.findById(update.getId());
+		    Optional<Signup> optionalUser = repo.findById(update.getId());
 
-	        if (optionalWasher == null) {
-	            throw new UserNotFoundException("Washer not exising with id: " + update.getId());
+	        if (optionalUser == null) {
+	            throw new UserNotFoundException("User not exising with id: " + update.getId());
 	        }
 
 	        Signup updateUser = repo.save(update);
@@ -58,10 +58,18 @@ public class UserServiceImplementation implements UserService{
 	    }
 
 	@Override
-	public String deleteUser(int id) {
+	public void deleteUser(int id) {
 		// TODO Auto-generated method stub
-		 repo.deleteById(id);
-		 return "Deleted sucessfully of Id:"+id;
+		Optional<Signup> optionalUser = repo.findById(id);
+
+		if (optionalUser == null) {
+			throw new UserNotFoundException("User not exising with id: " + id);
+		}
+
+		Signup deleteUser = optionalUser.get();
+
+		repo.delete(deleteUser);
+
 	}
 
 	

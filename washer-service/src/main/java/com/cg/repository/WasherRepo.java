@@ -9,10 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import com.cg.models.Washers;
 @Repository
-public interface WasherRepo extends MongoRepository<Washers, String> {
+public interface WasherRepo extends MongoRepository<Washers, Integer> {
 
 	Optional<Washers> findById(Long id);
-
-	void deleteById(int id);	
+	
 
 }

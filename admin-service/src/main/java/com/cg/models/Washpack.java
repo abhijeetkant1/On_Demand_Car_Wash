@@ -8,14 +8,14 @@ public class Washpack {
 	private int id;
 	private String packname;
 	private String description;
-	private String cost;
+	private Integer cost;
 	
 	
-	
-	public String getCost() {
-		return cost;
-	}
-	public void setCost(String cost) {
+	public Washpack(int id, String packname, String description, Integer cost) {
+		super();
+		this.id = id;
+		this.packname = packname;
+		this.description = description;
 		this.cost = cost;
 	}
 	public int getId() {
@@ -36,12 +36,19 @@ public class Washpack {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public Integer getCost() {
+		return cost;
+	}
+	public void setCost(Integer cost) {
+		this.cost = cost;
+	}
 	@Override
 	public String toString() {
-		return "washpack [id=" + id + ", packname=" + packname + ",cost="+ cost +", description=" + description + "]";
+		return "Washpack [id=" + id + ", packname=" + packname + ", description=" + description + ", cost=" + cost
+				+ "]";
 	}
 	
-
+	
 	
 	
 

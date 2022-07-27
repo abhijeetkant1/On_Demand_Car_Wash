@@ -22,6 +22,7 @@ import com.cg.models.UserRating;
 import com.cg.models.Washers;
 import com.cg.models.Washpack;
 import com.cg.services.AdminService;
+import com.cg.services.LoginService;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -39,6 +40,9 @@ public class AdminController
   */
 	@Autowired
 	private AdminService service;
+	
+	@Autowired
+	private LoginService admin;
 	
     @Autowired
 	private RestTemplate restTemplate;
@@ -59,7 +63,7 @@ public class AdminController
 }
     
     @GetMapping("/alladmins")
-	@ApiOperation(value = "To Get all User Details")
+	@ApiOperation(value = "To Get all Admins Details")
 	public List<Admin> findAll() {
 	return service.findAll();
 		
@@ -81,7 +85,7 @@ public class AdminController
 	}
     @PutMapping("/washpack/update")
 	@ApiOperation(value = "To update washpack Details")
-	public String updateWashpack(@RequestBody Washpack updatepack,@RequestParam int id ) {
+	public String updateWashpack(@RequestBody Washpack updatepack ) {
 		service.updateWashpack(updatepack);
 		return "Washpack updated Succesfull!!!";
 
@@ -114,27 +118,33 @@ public class AdminController
 		return service.getUser();
 		
 	}
+	@PostMapping("/login")
+
+	public String adminLogin(@RequestBody Admin login) {
+
+		return admin.adminLogin(login);
+	}
     //Rest template
 	@GetMapping("/allorder")
 	public List<OrderDetails> getwashpacks(){
-		 String baseurl="http://localhost:/order/allorder";
+		 String baseurl="http://localhost:8081/order/allorder";
 		 OrderDetails[] orders=restTemplate.getForObject(baseurl, OrderDetails[].class);
 		return Arrays.asList(orders);
 		
 	}
 	
-		
-		@GetMapping("/allpayment")
-		public List<PaymentDetails> getallpayment(){
-			 String baseurl="http://localhost:/payment/allpayment";
-			 PaymentDetails[] pay=restTemplate.getForObject(baseurl, PaymentDetails[].class);
-			return Arrays.asList(pay);
-		}
+//		
+//		@GetMapping("/allpayment")
+//		public List<PaymentDetails> getallpayment(){
+//			 String baseurl="http://localhost:/payment/allpayment";
+//			 PaymentDetails[] pay=restTemplate.getForObject(baseurl, PaymentDetails[].class);
+//			return Arrays.asList(pay);
+//		}
 		
 			
 			@GetMapping("/allusers")
 			public List<Signup> getallusers(){
-				 String baseurl="http://localhost:/user/allusers";
+				 String baseurl="http://localhost:8083/user/allusers";
 				 Signup[] user =restTemplate.getForObject(baseurl, Signup[].class);
 				return Arrays.asList(user);
 			
@@ -142,7 +152,7 @@ public class AdminController
 }
 			@GetMapping("/allwasher")
 			public List<Washers> getwasher(){
-				 String baseurl="http://localhost:/washer/allwasher";
+				 String baseurl="http://localhost:8082/washer/allwasher";
 				 Washers[] washer =restTemplate.getForObject(baseurl, Washers[].class);
 				return Arrays.asList(washer);
 			

@@ -1,5 +1,6 @@
 package com.cg.controller;
 
+import java.util.Arrays;
 //import java.util.Arrays;
 import java.util.List;
 
@@ -14,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 //import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestTemplate;
 
+import com.cg.models.OrderDetails;
+import com.cg.models.UserRating;
 //import com.cg.models.OrderDetails;
 //import com.cg.models.UserRating;
 import com.cg.models.Washers;
@@ -26,8 +30,7 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/washer")
 public class WasherController
 {
-    @Autowired
-	private WasherService service;
+   
     
     /* Name:Abhijeet kant
      * EmpId: 46195747
@@ -35,11 +38,15 @@ public class WasherController
      * Modification Date:23/07/22
      * 
      */
+	 @Autowired
+		private WasherService service;
+	 
+	 @Autowired
+		private RestTemplate restTemplate;
     
     @PostMapping("/addwasher")
     @ApiOperation(value = "To Add washer Details")
     public String saveUser(@RequestBody Washers washer) {
-    	washer.setId(service.getSequenceNumber(Washers.SEQUENCE_NAME));
     	 service.save(washer);
     	 return "you Are working With A1A Carwash";
     }
@@ -64,7 +71,25 @@ public class WasherController
     	 this.service.deleteWasher(id);
     	 return "Account Delete Happy to work With you";
     }
-    
-
-    
+    /*------------------ Resttemplates---------------------------- */
+	@GetMapping("/allratings")
+	@ApiOperation(value = "Gets all ")
+	public List<UserRating> getwashpacks() {
+		String baseurl = "http://localhost:8084/admin/allratings";
+		UserRating[] wp = restTemplate.getForObject(baseurl,UserRating[].class);
+		return Arrays.asList(wp);
+	}
+	
+	
+	
+        
+		@GetMapping("/allbooking")
+		@ApiOperation(value = "Gets all orders")
+		public List<OrderDetails> getallbookings(){
+			String baseurl="http://localhost:8081/order/allorders";
+			OrderDetails[] allorders=restTemplate.getForObject(baseurl, OrderDetails[].class);
+			
+			return Arrays.asList(allorders);
+   
+}
 }

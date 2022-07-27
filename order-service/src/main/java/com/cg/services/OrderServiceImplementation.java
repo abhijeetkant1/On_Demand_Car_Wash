@@ -2,6 +2,8 @@ package com.cg.services;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -10,6 +12,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import com.cg.exception.OrderNotFoundException;
 import com.cg.models.DatabaseSequence;
 import com.cg.models.OrderDetails;
 import com.cg.repository.OrderRepo;
@@ -23,27 +26,37 @@ public class OrderServiceImplementation implements OrderService{
 	@Override
 	public OrderDetails addOrder(OrderDetails order) {
 		// TODO Auto-generated method stub
-		return repo.save(order);
+		OrderDetails addOrder=repo.save(order);
+		return addOrder;
 	}
 
 	@Override
 	public List<OrderDetails> orderdetails() {
 		// TODO Auto-generated method stub
-		return repo.findAll();
+		List<OrderDetails> order=repo.findAll();
+		return order;
 	}
 
 	@Override
 	public OrderDetails updateOrder(OrderDetails update) {
 		// TODO Auto-generated method stub
-		return repo.save(update);
+		Optional<OrderDetails> optionalOrder = repo.findById(update.getOrderId());
+
+		if (optionalOrder == null) {
+			throw new OrderNotFoundException("order not exising with id: " + update.getOrderId());
+		}
+
+		OrderDetails updateOrder = repo.save(update);
+
+		return updateOrder;
 	}
-	public boolean existsById(int id)
+	public boolean existsById(Long id)
 	{
 		return repo.existsById(id);
 		
 	}
 	@Override
-	public void deleteById(int id) {
+	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		repo.deleteById(id);
 	}
