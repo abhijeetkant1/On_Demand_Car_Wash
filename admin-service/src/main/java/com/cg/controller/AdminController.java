@@ -133,13 +133,13 @@ public class AdminController
 		
 	}
 	
-//		
-//		@GetMapping("/allpayment")
-//		public List<PaymentDetails> getallpayment(){
-//			 String baseurl="http://localhost:/payment/allpayment";
-//			 PaymentDetails[] pay=restTemplate.getForObject(baseurl, PaymentDetails[].class);
-//			return Arrays.asList(pay);
-//		}
+		
+		@GetMapping("/allpayment")
+		public List<PaymentDetails> getallpayment(){
+			 String baseurl="http://localhost:8083/user/allpayment";
+			 PaymentDetails[] pay=restTemplate.getForObject(baseurl, PaymentDetails[].class);
+			return Arrays.asList(pay);
+		}
 		
 			
 			@GetMapping("/allusers")
