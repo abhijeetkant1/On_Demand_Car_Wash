@@ -1,63 +1,114 @@
 package com.cg.models;
 
-import org.springframework.data.annotation.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Paymentsdb")
-public class Paymentdetails {
+@Document(collection="paymentdetails")
+public class PaymentDetails {
+	
+	
+	
+	private String FullName;
+	
+	@NotNull
+	@Size(min=16,max=16,message="Card Number should of 16 digits")
+	private String cardNo;
+	
+	@NotNull
+	@Max(value=999,message="CVV cannot exceed 3 digits")
+	private int cvv;
+	
+	@NotNull
+	private String validdate;
+	
+	@NotNull
+	private String bankName;
+	
+	@NotNull
+	private int amount;
+	
 
-	@Id
-	private int orderId;
-	private float amount;
-	private String paymentStatus;
-	private String txId;
 
 
-	public Paymentdetails(int orderId, float amount, String paymentStatus, String txId) {
-		super();
-		this.orderId = orderId;
-		this.amount = amount;
-		this.paymentStatus = paymentStatus;
-		this.txId = txId;
+	public String getCardNo() {
+		return cardNo;
 	}
 
-	public int getOrderId() {
-		return orderId;
+	public void setCardNo(String cardNo) {
+		this.cardNo = cardNo;
 	}
 
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
+	public int getCvv() {
+		return cvv;
 	}
 
-	public float getAmount() {
+	public void setCvv(int cvv) {
+		this.cvv = cvv;
+	}
+
+	public String getValiddate() {
+		return validdate;
+	}
+
+	public void setValiddate(String validdate) {
+		this.validdate = validdate;
+	}
+
+	public String getBankName() {
+		return bankName;
+	}
+
+	public String getFullName() {
+		return FullName;
+	}
+
+	public void setFullName(String fullName) {
+		FullName = fullName;
+	}
+
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+
+	public int getAmount() {
 		return amount;
 	}
 
-	public void setAmount(float amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 
-	public String getPaymentStatus() {
-		return paymentStatus;
+	public PaymentDetails( String fullName,
+			@NotNull @Size(min = 16, max = 16, message = "Card Number should of 16 digits") String cardNo,
+			@NotNull @Max(value = 999, message = "CVV cannot exceed 3 digits") int cvv, @NotNull String validdate,
+			@NotNull String bankName, @NotNull int amount) {
+		super();
+		
+		FullName = fullName;
+		this.cardNo = cardNo;
+		this.cvv = cvv;
+		this.validdate = validdate;
+		this.bankName = bankName;
+		this.amount = amount;
 	}
 
-	public void setPaymentStatus(String paymentStatus) {
-		this.paymentStatus = paymentStatus;
-	}
-
-	public String getTxId() {
-		return txId;
-	}
-
-	public void setTxId(String txId) {
-		this.txId = txId;
-	}
-
-	
 	@Override
 	public String toString() {
-		return "PaymentDetails [orderId=" + orderId + ", amount=" + amount + ", paymentStatus=" + paymentStatus
-				+ ", txId=" + txId + "]";
+		return "PaymentDetails [ FullName=" + FullName + ", cardNo=" + cardNo + ", cvv=" + cvv
+				+ ", validdate=" + validdate + ", bankName=" + bankName + ", amount=" + amount + "]";
 	}
+
+	public PaymentDetails() {
+		super();
+	}
+	
+	
+
+
+	
 }
 

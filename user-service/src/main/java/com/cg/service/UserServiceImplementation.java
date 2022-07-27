@@ -17,8 +17,9 @@ import org.springframework.stereotype.Service;
 import com.cg.exception.UserNotFoundException;
 
 import com.cg.models.DatabaseSequence;
+import com.cg.models.PaymentDetails;
 import com.cg.models.Signup;
-
+import com.cg.repository.PaymentRepo;
 import com.cg.repository.UserRepo;
 @Service
 public class UserServiceImplementation implements UserService{
@@ -71,7 +72,21 @@ public class UserServiceImplementation implements UserService{
 		repo.delete(deleteUser);
 
 	}
+	@Autowired
+	private PaymentRepo repository;
 
+	@Override
+	public List<PaymentDetails> findAllpayment() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
+	}
+
+	@Override
+	public void addpayment(PaymentDetails payment) {
+		// TODO Auto-generated method stub
+		repository.save(payment);
+		
+	}
 	
 	
 	  @Autowired

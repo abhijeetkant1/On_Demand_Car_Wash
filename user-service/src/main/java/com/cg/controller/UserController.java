@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.cg.models.OrderDetails;
+import com.cg.models.PaymentDetails;
 import com.cg.models.Signup;
 import com.cg.models.UserLogin;
 import com.cg.models.UserRating;
@@ -76,12 +77,28 @@ public class UserController {
 	public void deleteuser(@RequestParam int id) {
 		 service.deleteUser(id);
 	}
-
+	/*-------------------UserLogin----------------------------- */
+	
 	@PostMapping("/login")
 	@ApiOperation(value = "To Add Login Details")
 	public String userLogin(@RequestBody UserLogin login) {
 		return user.userLogin(login);
 	}
+	/*-------------------Payment----------------------------- */
+	
+	@PostMapping("/addpayment")
+    @ApiOperation(value = "To Add payment details")
+    public String addpayment(@RequestBody PaymentDetails payment) {
+    	 service.addpayment(payment);
+    	 return "Thank You For Choosing us";
+    	 
+    }
+
+    @GetMapping("/allpayment")
+    @ApiOperation(value = "To Get all Payment Details")
+    public List<PaymentDetails> findAllpayment(){
+    	return service.findAllpayment();
+    }
 
 	/*-------------------Resttemplates----------------------------- */
 
