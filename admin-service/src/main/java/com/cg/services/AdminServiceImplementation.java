@@ -118,11 +118,6 @@ public class AdminServiceImplementation implements AdminService {
 		return rating;
 	}
 
-	@Override
-	public void save(UserRating ratings) {
-		// TODO Auto-generated method stub
-		ratingrepo.save(ratings);
-		
-	}
+	
 
 }

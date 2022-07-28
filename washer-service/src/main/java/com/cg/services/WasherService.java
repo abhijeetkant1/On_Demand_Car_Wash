@@ -7,7 +7,7 @@ public interface WasherService {
 
 	public void save(Washers washer);
 
-	//public void updateWasherDetails(int id, Washers washer);
+	public void updateWasherDetails( Washers washer);
 
 	public List<Washers> getWashers();
 
@@ -15,5 +15,5 @@ public interface WasherService {
 
 	public long getSequenceNumber(String sequenceName);
 
-	Washers updateWasherDetails(Washers washer);
+	//Washers updateWasherDetails(Washers washer);
 }

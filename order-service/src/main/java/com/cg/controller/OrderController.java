@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.exception.ApiRequestException;
 import com.cg.models.OrderDetails;
+import com.cg.repository.OrderRepo;
 import com.cg.services.OrderService;
 
 import io.swagger.annotations.ApiOperation;
@@ -45,26 +47,35 @@ public class OrderController
 
 	@GetMapping("/allorders")
 	@ApiOperation(value = "To Get all order Details")
-	public List<OrderDetails> getOrder() {
-		return orderservice.orderdetails();
+	public List<OrderDetails> orderDetails() {
+		return orderservice.orderDetails();
 	}
 
 	@PutMapping("/updateorder")
 	@ApiOperation(value = "To update order Details")
-	public String updateDetails( @RequestBody OrderDetails order) {
-		orderservice.updateOrder(order);
+	public String updateOrder( @RequestBody OrderDetails update) {
+		orderservice.updateOrder(update);
 		return "Updated sucessfully";
 	}
 
-	@DeleteMapping("/cancelorder/{id}")
-	@ApiOperation(value = "Deletes order by Id")
-	public ResponseEntity<Object> deletorder(@RequestParam Long id) {
-		boolean isOrderExist = orderservice.existsById(id);
-		if (isOrderExist) {
-			orderservice.deleteById(id);
-			return new ResponseEntity<Object>("Order deleted with id " + id, HttpStatus.OK);
-		} else {
-			throw new ApiRequestException("ORDER NOT FOUND WITH THIS ID:" + id);
-		}
+//	@DeleteMapping("/cancelorder/{id}")
+//	@ApiOperation(value = "Deletes order by Id")
+//	public ResponseEntity<Object> deleteById(@RequestParam int id) {
+//		boolean isOrderExist = orderservice.existsById(id);
+//		if (isOrderExist) {
+//			orderservice.deleteById(id);
+//			return new ResponseEntity<Object>("Order deleted with id " + id, HttpStatus.OK);
+//		} else {
+//			throw new ApiRequestException("ORDER NOT FOUND WITH THIS ID:" + id);
+//		}
+	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<String> deleteOrderById(@PathVariable("id") int id) {
+		ResponseEntity<String> responseEntity = null;
+		orderservice.deleteById(id);
+		responseEntity = new ResponseEntity<>("order deleted successfully", HttpStatus.OK);
+		return responseEntity;
 	}
+
 }
+

@@ -11,12 +11,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Signup {
 
 	@Id
-	private Long id;
+	private int id;
 	@NotEmpty(message = "Name must not be empty")
 	private String name;
 	@NotEmpty(message = "userName must not be empty")
 	private String username;
-	@NotEmpty(message = "Rassword Must not be empty")
+	@NotEmpty(message = "password Must not be empty")
 	@Size(min=8,message="Not Strong Password")
 	private String password;
 	private String confirmpassword;
@@ -33,9 +33,9 @@ public class Signup {
 		super();
 	}
 
-	public Signup(Long id, @NotEmpty(message = "Name must not be empty") String name,
+	public Signup(int id, @NotEmpty(message = "Name must not be empty") String name,
 			@NotEmpty(message = "userName must not be empty") String username,
-			@NotEmpty(message = "Rassword Must not be empty") @Size(min = 8, message = "Not Strong Password") String password,
+			@NotEmpty(message = "password Must not be empty") @Size(min = 8, message = "Not Strong Password") String password,
 			String confirmpassword,
 			@NotEmpty(message = "Contact Number must not be empty") @Size(max = 10, message = "10 Digit Mobile Number") String contactno,
 			@NotEmpty(message = "Emailid must not be empty") String email) {
@@ -49,11 +49,11 @@ public class Signup {
 		this.email = email;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

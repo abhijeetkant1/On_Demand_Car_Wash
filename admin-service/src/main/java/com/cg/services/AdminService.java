@@ -18,7 +18,6 @@ public interface AdminService {
 	
 	//Ratings
 	public List<UserRating> getUser();
-	public void save(UserRating ratings);
 	
 	//washpacks
 	public List<Washpack> getWashpack();

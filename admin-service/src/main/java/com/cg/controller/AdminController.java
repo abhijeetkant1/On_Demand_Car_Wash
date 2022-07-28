@@ -1,11 +1,13 @@
 package com.cg.controller;
 
 import java.util.Arrays;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.cg.models.Admin;
 import com.cg.models.OrderDetails;
-import com.cg.models.PaymentDetails;
+import com.cg.models.Payment;
 import com.cg.models.Signup;
 import com.cg.models.UserRating;
 import com.cg.models.Washers;
@@ -106,14 +108,9 @@ public class AdminController
 	
 	
        //Rating 
-	@PostMapping("/addrating")
-	public String save(@RequestBody UserRating ratings)
-	{
-		service.save(ratings);
-		return " Thanks for Your Valuable feedback";
-	}
+
 	@GetMapping("/allratings")
-	public List<UserRating> getuser()
+	public List<UserRating> getUser()
 	{
 		return service.getUser();
 		
@@ -125,19 +122,21 @@ public class AdminController
 		return admin.adminLogin(login);
 	}
     //Rest template
-	@GetMapping("/allorder")
+	
+	@GetMapping("/allorders")
 	public List<OrderDetails> getwashpacks(){
-		 String baseurl="http://localhost:8081/order/allorder";
+		 String baseurl="http://localhost:8081/order/allorders";
 		 OrderDetails[] orders=restTemplate.getForObject(baseurl, OrderDetails[].class);
 		return Arrays.asList(orders);
 		
 	}
 	
+	
 		
 		@GetMapping("/allpayment")
-		public List<PaymentDetails> getallpayment(){
-			 String baseurl="http://localhost:8083/user/allpayment";
-			 PaymentDetails[] pay=restTemplate.getForObject(baseurl, PaymentDetails[].class);
+		public List<Payment> getallpayment(){
+			 String baseurl="http://localhost:8083/payment/all";
+			 Payment[] pay=restTemplate.getForObject(baseurl, Payment[].class);
 			return Arrays.asList(pay);
 		}
 		

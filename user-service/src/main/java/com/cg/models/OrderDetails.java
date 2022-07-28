@@ -5,93 +5,137 @@ import javax.validation.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "userdetailsdb")
-public class OrderDetails 
-{
+@Document(collection = "Bookingdetailsdb")
+public class OrderDetails {
+
 	@Id
-	private int id;
+	@NotEmpty(message = "Order Id must not be empty")
+	private int orderId;
+	@NotEmpty(message = "carName must not be empty")
+	private String carName;
+	@NotEmpty(message = "car model must not be empty")
+	private String carModel;
+	@NotEmpty(message = "UserName must not be empty")
+	private String username;
+	@NotEmpty(message = "date must not be empty")
+	private String date;
+	@NotEmpty(message = "contact must not be empty")
+	private Long contactno;
+	@NotEmpty(message = "address must not be empty")
+	private String address;
+
 	
-	private String CarName;
-    @NotEmpty(message="carname should not be empty")
-	private String Model;
-    @NotEmpty(message="model should not be empty")
-	private String washerName;
-    @NotEmpty(message="washername should not be empty")
-	private int washpackId;
-    @NotNull(message="washpackageid should not be empty")
-	private String Date;
-    @NotNull(message="preffered should not be empty")
-    @NotNull(message="contactNo should not be empty")
-	private long contact;
-    
-    public OrderDetails()
-    {
-    	
-    }
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getCarName() {
-		return CarName;
-	}
-	public void setCarName(String carName) {
-		CarName = carName;
-	}
-	public String getModel() {
-		return Model;
-	}
-	public void setModel(String model) {
-		Model = model;
-	}
-	public String getWasherName() {
-		return washerName;
-	}
-	public void setWasherName(String washerName) {
-		this.washerName = washerName;
-	}
-	public int getWashpackId() {
-		return washpackId;
-	}
-	public void setWashpackId(int washpackId) {
-		this.washpackId = washpackId;
-	}
-	public String getDate() {
-		return Date;
-	}
-	public void setDate(String date) {
-		Date = date;
-	}
-	public long getContact() {
-		return contact;
-	}
-	public void setContact(long contact) {
-		this.contact = contact;
-	}
-	public OrderDetails(int id, String carName, @NotEmpty(message = "carname should not be empty") String model,
-			@NotEmpty(message = "model should not be empty") String washerName,
-			@NotEmpty(message = "washername should not be empty") int washpackId,
-			@NotNull(message = "washpackageid should not be empty") String date,
-			@NotNull(message = "preffered should not be empty") @NotNull(message = "contactNo should not be empty") long contact) {
+	@Transient
+    public static final String SEQUENCE_NAME = "users_sequence";
+	
+
+	public OrderDetails() {
 		super();
-		this.id = id;
-		CarName = carName;
-		Model = model;
-		this.washerName = washerName;
-		this.washpackId = washpackId;
-		Date = date;
-		this.contact = contact;
 	}
+
+
+	public OrderDetails(@NotEmpty(message = "Order Id must not be empty") int orderId,
+			@NotEmpty(message = "carName must not be empty") String carName,
+			@NotEmpty(message = "car model must not be empty") String carModel,
+			@NotEmpty(message = "UserName must not be empty") String username,
+			@NotEmpty(message = "date must not be empty") String date,
+			@NotEmpty(message = "contact must not be empty") Long contactno,
+			@NotEmpty(message = "address must not be empty") String address) {
+		super();
+		this.orderId = orderId;
+		this.carName = carName;
+		this.carModel = carModel;
+		this.username = username;
+		this.date = date;
+		this.contactno = contactno;
+		this.address = address;
+	}
+
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+
+	public String getCarName() {
+		return carName;
+	}
+
+
+	public void setCarName(String carName) {
+		this.carName = carName;
+	}
+
+
+	public String getCarModel() {
+		return carModel;
+	}
+
+
+	public void setCarModel(String carModel) {
+		this.carModel = carModel;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+	public Long getContactno() {
+		return contactno;
+	}
+
+
+	public void setContactno(Long contactno) {
+		this.contactno = contactno;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public static String getSequenceName() {
+		return SEQUENCE_NAME;
+	}
+
+
 	@Override
 	public String toString() {
-		return "OrderDetails [id=" + id + ", CarName=" + CarName + ", Model=" + Model + ", washerName=" + washerName
-				+ ", washpackId=" + washpackId + ", Date=" + Date + ", contact=" + contact + "]";
+		return "OrderDetails [orderId=" + orderId + ", carName=" + carName + ", carModel=" + carModel + ", username="
+				+ username + ", date=" + date + ", contactno=" + contactno + ", address=" + address + "]";
 	}
-    
+
+
 	
-	
-}
+	}

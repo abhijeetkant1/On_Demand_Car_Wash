@@ -72,15 +72,14 @@ public class WasherController
     	 return "Account Delete Happy to work With you";
     }
     /*------------------ Resttemplates---------------------------- */
+    
 	@GetMapping("/allratings")
 	@ApiOperation(value = "Gets all ")
 	public List<UserRating> getwashpacks() {
 		String baseurl = "http://localhost:8084/admin/allratings";
-		UserRating[] wp = restTemplate.getForObject(baseurl,UserRating[].class);
-		return Arrays.asList(wp);
+		UserRating[] washpack = restTemplate.getForObject(baseurl,UserRating[].class);
+		return Arrays.asList(washpack);
 	}
-	
-	
 	
         
 		@GetMapping("/allbooking")

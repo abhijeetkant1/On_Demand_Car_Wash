@@ -29,9 +29,8 @@ public class OrderServiceImplementation implements OrderService{
 		OrderDetails addOrder=repo.save(order);
 		return addOrder;
 	}
-
 	@Override
-	public List<OrderDetails> orderdetails() {
+	public List<OrderDetails> orderDetails() {
 		// TODO Auto-generated method stub
 		List<OrderDetails> order=repo.findAll();
 		return order;
@@ -50,22 +49,29 @@ public class OrderServiceImplementation implements OrderService{
 
 		return updateOrder;
 	}
-	public boolean existsById(Long id)
+	public boolean existsById(int id)
 	{
 		return repo.existsById(id);
 		
 	}
 	@Override
-	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		repo.deleteById(id);
+	public void deleteById(int id) {
+		Optional<OrderDetails> optionalOrder = repo.findById(id);
+
+		if (optionalOrder == null) {
+			throw new OrderNotFoundException("User not exising with id: " + id);
+		}
+
+		OrderDetails order = optionalOrder.get();
+		repo.delete(order);
+
 	}
 	@Autowired
 	  private MongoOperations mongoOperations;
 
 
 
-	  public Long getSequenceNumber(String sequenceName) {
+	  public int getSequenceNumber(String sequenceName) {
 	  //get sequence no
 	  Query query = new Query(Criteria.where("id").is(sequenceName));
 	  //update the sequence no
@@ -77,7 +83,7 @@ public class OrderServiceImplementation implements OrderService{
 
 
 
-	  return !Objects.isNull(counter) ? counter.getSeq() : 1;
+	  return (int) (!Objects.isNull(counter) ? counter.getSeq() : 1);
 
 	  }
 }

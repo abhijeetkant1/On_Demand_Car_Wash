@@ -33,7 +33,7 @@ public class WasherServiceImpl implements WasherService
 	}
 
 	@Override
-    public Washers updateWasherDetails(Washers washer) {
+    public void updateWasherDetails(Washers washer) {
         // TODO Auto-generated method stub 
         Optional<Washers> optionalWasher = repo.findById(washer.getId());
 
@@ -41,9 +41,8 @@ public class WasherServiceImpl implements WasherService
             throw new WasherNotFoundException("Washer not exising with id: " + washer.getId());
         }
 
-        Washers updateWasher = repo.save(washer);
+         repo.save(washer);
 
-        return updateWasher;
     }
 
 		@Override

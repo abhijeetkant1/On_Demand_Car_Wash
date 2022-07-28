@@ -3,6 +3,7 @@ package com.cg.service;
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 
 
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,9 +18,8 @@ import org.springframework.stereotype.Service;
 import com.cg.exception.UserNotFoundException;
 
 import com.cg.models.DatabaseSequence;
-import com.cg.models.PaymentDetails;
+import com.cg.models.Payment;
 import com.cg.models.Signup;
-import com.cg.repository.PaymentRepo;
 import com.cg.repository.UserRepo;
 @Service
 public class UserServiceImplementation implements UserService{
@@ -72,29 +72,13 @@ public class UserServiceImplementation implements UserService{
 		repo.delete(deleteUser);
 
 	}
-	@Autowired
-	private PaymentRepo repository;
-
-	@Override
-	public List<PaymentDetails> findAllpayment() {
-		// TODO Auto-generated method stub
-		return repository.findAll();
-	}
-
-	@Override
-	public void addpayment(PaymentDetails payment) {
-		// TODO Auto-generated method stub
-		repository.save(payment);
-		
-	}
-	
 	
 	  @Autowired
 	  private MongoOperations mongoOperations;
 
 
 
-	  public Long getSequenceNumber(String sequenceName) {
+	  public int getSequenceNumber(String sequenceName) {
 	  //get sequence no
 	  Query query = new Query(Criteria.where("id").is(sequenceName));
 	  //update the sequence no
@@ -106,7 +90,7 @@ public class UserServiceImplementation implements UserService{
 
 
 
-	  return !Objects.isNull(counter) ? counter.getSeq() : 1;
+	  return (int) (!Objects.isNull(counter) ? counter.getSeq() : 1);
 
 
 

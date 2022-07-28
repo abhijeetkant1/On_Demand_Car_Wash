@@ -29,7 +29,7 @@ public class WasherServiceTests
     @MockBean
     private WasherRepo repo;
 	@Test
-    public void getUsersTest()
+    public void getWasherTest()
     {
     	when(repo.findAll()).thenReturn(Stream
 				.of(new Washers(22, "Nithin","USA","12345"),
@@ -38,12 +38,12 @@ public class WasherServiceTests
 	}
 	
 	@Test
-	public void saveUserTest() {
+	public void saveWasherTest() {
 		Washers washer = new Washers(2, "Pranya","Pune","123456");
 		when(repo.save(washer)).thenReturn(washer);
 	}
 
-	public void deleteUserTest() {
+	public void deleteWasherTest() {
 		Washers washer = new Washers(1, "raju","Hyderabad","123456");	
 		service.deleteWasher(1);
 		verify(repo, times(1)).delete(washer);

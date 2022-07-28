@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.cg.models.OrderDetails;
-import com.cg.models.PaymentDetails;
+import com.cg.models.Payment;
 import com.cg.models.Signup;
 import com.cg.models.UserLogin;
 import com.cg.models.UserRating;
@@ -84,28 +85,13 @@ public class UserController {
 	public String userLogin(@RequestBody UserLogin login) {
 		return user.userLogin(login);
 	}
-	/*-------------------Payment----------------------------- */
 	
-	@PostMapping("/addpayment")
-    @ApiOperation(value = "To Add payment details")
-    public String addpayment(@RequestBody PaymentDetails payment) {
-    	 service.addpayment(payment);
-    	 return "Thank You For Choosing us";
-    	 
-    }
-
-    @GetMapping("/allpayment")
-    @ApiOperation(value = "To Get all Payment Details")
-    public List<PaymentDetails> findAllpayment(){
-    	return service.findAllpayment();
-    }
-
 	/*-------------------Resttemplates----------------------------- */
 
-	@GetMapping("/allpacks")
+	@GetMapping("/washpack")
 	@ApiOperation(value = "Gets all packs")
 	public List<Washpack> getwashpacks() {
-		String baseurl = "http://localhost:8084/admin/allpacks";
+		String baseurl = "http://localhost:8084/admin/washpack";
 		Washpack[] wp = restTemplate.getForObject(baseurl, Washpack[].class);
 		return Arrays.asList(wp);
 	}
@@ -121,22 +107,28 @@ public class UserController {
 				.getBody();
 	}
 
-	@DeleteMapping("/cancelorder")
-	@ApiOperation(value = "User can cancel order")
-	public String deleteorder(@RequestParam int id) {
-		String baseurl = "http://localhost:8081/order/cancelorder";
-		OrderDetails order = restTemplate.getForObject(baseurl, OrderDetails.class);
-		return "Your Order is successfully Canceled " + order;
-	}
+//	@DeleteMapping("/cancelorder")
+//	@ApiOperation(value = "user can cancel order")
+//	public String deleteorder(@RequestParam int id) {
+//		String baseurl = "http://localhost:8081/order/cancelorder/{id}";
+//		OrderDetails order = restTemplate.getForObject(baseurl, OrderDetails.class);
+//		return "Your Order is successfully Canceled " + order;
+//	}
 
-	@PostMapping("/addratings")
+	@DeleteMapping(value = "/delete/{orderId}")
+	public String deleteById(@PathVariable int id) {
+		restTemplate.delete("http://localhost:8081/order/delete/{orderId}", id, String.class);
+		return "Order with Id = " + id + " Deleted Successfully";
+	}
+	
+	@PostMapping("/addrating")
 	@ApiOperation(value = "User can give ratings to washers")
 	public String addrating(@RequestBody UserRating rating) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		HttpEntity<UserRating> entity = new HttpEntity<UserRating>(rating, headers);
 
-		return restTemplate.exchange("http://localhost:8084/admin/addratings", HttpMethod.POST, entity, String.class)
+		return restTemplate.exchange("http://localhost:8084/admin/addrating", HttpMethod.POST, entity, String.class)
 				.getBody();
 	}
 

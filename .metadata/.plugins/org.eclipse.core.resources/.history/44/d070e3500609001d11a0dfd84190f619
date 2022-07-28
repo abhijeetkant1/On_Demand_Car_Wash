@@ -1,4 +1,0 @@
-server.port=8081
-spring.data.mongodb.uri=mongodb+srv://Abhi31march:AIUksBaAb8mhljCA@cluster0.qyluq6u.mongodb.net/database?retryWrites=true&w=majority
-
-mongodb+srv://Abhi31march:<password>@cluster0.qyluq6u.mongodb.net/?retryWrites=true&w=majority

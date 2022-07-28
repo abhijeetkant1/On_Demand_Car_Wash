@@ -1,33 +1,33 @@
 package com.cg.models;
 
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "ratingdb")
 public class UserRating {
 	
-	     private String washername;
-		 private int rating;
+	     @Id
+	     @NotEmpty(message="Rating must not be empty")
+	     private int rating;
+	     @NotEmpty(message="Name must not be empty")
+	     private String washerName;
 		 private String review;
 		public UserRating() {
 			super();
-		}
-		public UserRating(String washername, int rating, String review) {
-			super();
-			this.washername = washername;
-			this.rating = rating;
-			this.review = review;
-		}
-		public String getWashername() {
-			return washername;
-		}
-		public void setWashername(String washername) {
-			this.washername = washername;
 		}
 		public int getRating() {
 			return rating;
 		}
 		public void setRating(int rating) {
 			this.rating = rating;
+		}
+		public String getWasherName() {
+			return washerName;
+		}
+		public void setWasherName(String washerName) {
+			this.washerName = washerName;
 		}
 		public String getReview() {
 			return review;
@@ -37,8 +37,14 @@ public class UserRating {
 		}
 		@Override
 		public String toString() {
-			return "UserRating [washername=" + washername + ", rating=" + rating + ", review=" + review + "]";
+			return "UserRating [rating=" + rating + ", washerName=" + washerName + ", review=" + review + "]";
 		}
-		 
+		public UserRating(@NotEmpty(message = "Rating must not be empty") int rating,
+				@NotEmpty(message = "Name must not be empty") String washerName, String review) {
+			super();
+			this.rating = rating;
+			this.washerName = washerName;
+			this.review = review;
+		}
 		
 }
