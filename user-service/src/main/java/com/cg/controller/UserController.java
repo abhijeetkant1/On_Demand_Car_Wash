@@ -107,18 +107,12 @@ public class UserController {
 				.getBody();
 	}
 
-//	@DeleteMapping("/cancelorder")
-//	@ApiOperation(value = "user can cancel order")
-//	public String deleteorder(@RequestParam int id) {
-//		String baseurl = "http://localhost:8081/order/cancelorder/{id}";
-//		OrderDetails order = restTemplate.getForObject(baseurl, OrderDetails.class);
-//		return "Your Order is successfully Canceled " + order;
-//	}
+
 
 	@DeleteMapping(value = "/delete/{orderId}")
-	public String deleteById(@PathVariable int id) {
-		restTemplate.delete("http://localhost:8081/order/delete/{orderId}", id, String.class);
-		return "Order with Id = " + id + " Deleted Successfully";
+	public String deleteById(@PathVariable("orderId") int orderId) {
+		restTemplate.delete("http://localhost:8081/order/delete/{orderId}", orderId, String.class);
+		return "Order with Id = " + orderId + " Deleted Successfully";
 	}
 	
 	@PostMapping("/addrating")
