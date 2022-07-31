@@ -32,7 +32,12 @@ import com.cg.service.LoginService;
 import com.cg.service.UserServiceImplementation;
 
 import io.swagger.annotations.ApiOperation;
-
+/* Name:Abhijeet kant
+ * EmpId: 46195747
+ * Creation Date:24/07/22
+ * Modification Date:25/07/22
+ * 
+ */
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/user")
@@ -43,12 +48,7 @@ public class UserController {
 	@Autowired
 	private UserServiceImplementation service;
 	
-	 /* Name:Abhijeet kant
-	  * EmpId: 46195747
-	  * Creation Date:24/07/22
-	  * Modification Date:25/07/22
-	  * 
-	  */
+	 
 
 	@Autowired
 	private RestTemplate restTemplate;

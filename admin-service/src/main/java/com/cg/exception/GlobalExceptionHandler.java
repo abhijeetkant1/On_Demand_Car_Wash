@@ -16,7 +16,7 @@ import com.cg.payload.ErrorInfo;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler
 {
 	@ExceptionHandler(AdminNotFoundException.class)
-	public ResponseEntity<ErrorInfo> handleProductNotExistingException(Exception e, HttpServletRequest req) {
+	public ResponseEntity<ErrorInfo> handleAdminNotExistingException(Exception e, HttpServletRequest req) {
 
 		String uri = req.getRequestURI().toString();
 
@@ -27,7 +27,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler
 	}
 	
 	@ExceptionHandler(WashpackNotFoundException.class)
-	public ResponseEntity<ErrorInfo> handleProductAlreadyExistException(Exception e, HttpServletRequest req) {
+	public ResponseEntity<ErrorInfo> handleAdminAlreadyExistException(Exception e, HttpServletRequest req) {
 
 		String uri = req.getRequestURI().toString();
 
