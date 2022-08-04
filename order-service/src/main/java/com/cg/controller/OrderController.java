@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,7 @@ import io.swagger.annotations.ApiOperation;
  * Modification Date:21/07/22
  * 
  */
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/order")
 public class OrderController 
@@ -76,6 +78,11 @@ public class OrderController
 		responseEntity = new ResponseEntity<>("order deleted successfully", HttpStatus.OK);
 		return responseEntity;
 	}
-
+	@GetMapping("/viewOrder/{Id}")
+    public ResponseEntity<OrderDetails> viewOrder(@PathVariable int Id)
+    {
+            OrderDetails order =orderservice.viewOrder(Id);
+            return new ResponseEntity<OrderDetails>(order,HttpStatus.OK);
+    }
 }
 

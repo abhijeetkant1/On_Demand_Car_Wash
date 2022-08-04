@@ -66,6 +66,18 @@ public class OrderServiceImplementation implements OrderService{
 		repo.delete(order);
 
 	}
+	
+	@Override
+    public     OrderDetails viewOrder(int id) {
+        // TODO Auto-generated method stub
+        Optional<OrderDetails> optionalOrder = repo.findById(id);
+        if(optionalOrder.isEmpty()) {
+            throw new OrderNotFoundException("Order  not existing with id: "+id);
+        }
+        return optionalOrder.get();
+
+
+}
 	@Autowired
 	  private MongoOperations mongoOperations;
 

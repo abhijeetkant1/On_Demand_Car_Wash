@@ -12,5 +12,6 @@ public interface OrderService {
 	public void deleteById(int id);
 	public int getSequenceNumber(String sequenceName);
 	public boolean existsById(int id);
+	public OrderDetails viewOrder(int id);
 
 }

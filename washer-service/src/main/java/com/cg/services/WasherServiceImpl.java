@@ -44,6 +44,17 @@ public class WasherServiceImpl implements WasherService
          repo.save(washer);
 
     }
+	@Override
+	public Washers viewWasher(int id) {
+		// TODO Auto-generated method stub
+		Optional<Washers> optionalWasher = repo.findById(id);
+        if(optionalWasher.isEmpty()) {
+            throw new WasherNotFoundException("Washer  not existing with id: "+id);
+        }
+        return optionalWasher.get();
+
+
+}
 
 		@Override
 	    public void deleteWasher(int id) { 

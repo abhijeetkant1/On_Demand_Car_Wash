@@ -1,13 +1,18 @@
 package com.cg.controller;
 
 import java.util.Arrays;
+
 //import java.util.Arrays;
 import java.util.List;
 
 //import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,13 +24,16 @@ import org.springframework.web.client.RestTemplate;
 
 import com.cg.models.OrderDetails;
 import com.cg.models.UserRating;
+import com.cg.models.WasherLogin;
 //import com.cg.models.OrderDetails;
 //import com.cg.models.UserRating;
 import com.cg.models.Washers;
+import com.cg.services.LoginService;
 import com.cg.services.WasherService;
 
 import io.swagger.annotations.ApiOperation;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/washer")
 public class WasherController
@@ -38,7 +46,10 @@ public class WasherController
      * Modification Date:23/07/22
      * 
      */
-	 @Autowired
+	@Autowired
+	private LoginService wahser;
+	
+	@Autowired
 		private WasherService service;
 	 
 	 @Autowired
@@ -71,6 +82,20 @@ public class WasherController
     	 this.service.deleteWasher(id);
     	 return "Account Delete Happy to work With you";
     }
+    @PostMapping("/login")
+	@ApiOperation(value = "To Add Login Details")
+	public String userWasher(@RequestBody WasherLogin login) {
+		return wahser.userWasher(login);
+	}
+    
+    @GetMapping("/viewWasher/{Id}")
+	public ResponseEntity<Washers> viewWasher(@PathVariable int Id) 
+	{
+			Washers washer =service.viewWasher(Id);
+			return new ResponseEntity<Washers>(washer,HttpStatus.OK);
+	}
+    
+ 
     /*------------------ Resttemplates---------------------------- */
     
 	@GetMapping("/allratings")

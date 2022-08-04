@@ -2,6 +2,7 @@ package com.cg.controller;
 
 import java.util.Arrays;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ import com.cg.models.Washers;
 import com.cg.models.Washpack;
 import com.cg.services.AdminService;
 import com.cg.services.LoginService;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import io.swagger.annotations.ApiOperation;
 
 /* Name:Abhijeet kant
@@ -34,6 +35,7 @@ import io.swagger.annotations.ApiOperation;
  * Modification Date:25/07/22
  * 
  */
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/admin")
 public class AdminController 

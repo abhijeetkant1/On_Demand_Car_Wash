@@ -38,7 +38,7 @@ import io.swagger.annotations.ApiOperation;
  * Modification Date:25/07/22
  * 
  */
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/user")
 public class UserController {
