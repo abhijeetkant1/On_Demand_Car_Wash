@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -18,8 +20,8 @@ import org.springframework.stereotype.Service;
 import com.cg.exception.UserNotFoundException;
 
 import com.cg.models.DatabaseSequence;
-import com.cg.models.Payment;
-import com.cg.models.Signup;
+//import com.cg.models.Payment;
+import com.cg.models.UserDetail;
 import com.cg.repository.UserRepo;
 @Service
 public class UserServiceImplementation implements UserService{
@@ -28,48 +30,54 @@ public class UserServiceImplementation implements UserService{
 	@Autowired
 	private UserRepo repo;
 	
-	
+	Logger logger = LoggerFactory.getLogger(UserServiceImplementation.class);
 	
 	@Override
-	public Signup addUser(Signup signup)
+	public UserDetail addUser(UserDetail signup)
 	{
-		Signup addUser=repo.save(signup);
+		 logger.info("Adding User");
+		UserDetail addUser=repo.save(signup);
+		logger.info("Successfully added user");
 		return addUser;
 	
 	}
 
 	@Override
-	public List<Signup> getuser() {
-		List<Signup> users=repo.findAll();
+	public List<UserDetail> getuser() {
+		 logger.info("Getting User List");
+		List<UserDetail> users=repo.findAll();
+		 logger.info("Successfully Getting list of user");
 		return users;
 	}
 
 	@Override
-	public Signup Updateuser(Signup update) {
-		    
-		    Optional<Signup> optionalUser = repo.findById(update.getId());
+	public UserDetail Updateuser(UserDetail update) {
+		logger.info("Updating User");
+		    Optional<UserDetail> optionalUser = repo.findById(update.getId());
 
 	        if (optionalUser == null) {
 	            throw new UserNotFoundException("User not exising with id: " + update.getId());
 	        }
 
-	        Signup updateUser = repo.save(update);
-
+	        UserDetail updateUser = repo.save(update);
+	        logger.info("Updated user successfully");
 	        return updateUser;
 	    }
 
 	@Override
 	public void deleteUser(int id) {
 		// TODO Auto-generated method stub
-		Optional<Signup> optionalUser = repo.findById(id);
+		logger.info("Deleting user by id");
+		Optional<UserDetail> optionalUser = repo.findById(id);
 
 		if (optionalUser == null) {
 			throw new UserNotFoundException("User not exising with id: " + id);
 		}
 
-		Signup deleteUser = optionalUser.get();
+		UserDetail deleteUser = optionalUser.get();
 
 		repo.delete(deleteUser);
+		logger.info("User deleted successfully by id");
 
 	}
 	
@@ -97,7 +105,7 @@ public class UserServiceImplementation implements UserService{
 	  }
 
 	@Override
-	public void deleteUser(Signup user) {
+	public void deleteUser(UserDetail user) {
 		// TODO Auto-generated method stub
 		repo.delete(user);
 		

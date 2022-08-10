@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -20,6 +22,8 @@ import com.cg.repository.WasherRepo;
 @Service
 public class WasherServiceImpl implements WasherService
 {
+	
+	Logger logger = LoggerFactory.getLogger(WasherServiceImpl.class);
 	@Autowired
 	private WasherRepo repo;
 
@@ -28,29 +32,35 @@ public class WasherServiceImpl implements WasherService
 	@Override
 	public void save(Washers washer) {
 		// TODO Auto-generated method stub
+		logger.info("Adding Washer");
 		repo.save(washer);
+		logger.info("Successfully added washer");
 		
 	}
 
 	@Override
     public void updateWasherDetails(Washers washer) {
         // TODO Auto-generated method stub 
-        Optional<Washers> optionalWasher = repo.findById(washer.getId());
+		 logger.info("updating washer details"); 
+		Optional<Washers> optionalWasher = repo.findById(washer.getId());
 
         if (optionalWasher == null) {
             throw new WasherNotFoundException("Washer not exising with id: " + washer.getId());
         }
 
          repo.save(washer);
+         logger.info("Successfully updated washer details");
 
     }
 	@Override
 	public Washers viewWasher(int id) {
 		// TODO Auto-generated method stub
+		 logger.info("View washer");
 		Optional<Washers> optionalWasher = repo.findById(id);
         if(optionalWasher.isEmpty()) {
             throw new WasherNotFoundException("Washer  not existing with id: "+id);
         }
+        logger.info("Successfully view washer");
         return optionalWasher.get();
 
 
@@ -58,19 +68,22 @@ public class WasherServiceImpl implements WasherService
 
 		@Override
 	    public void deleteWasher(int id) { 
-	        Optional<Washers> optionalWasher = repo.findById(id);
+			 logger.info("Deleting Washer");
+			Optional<Washers> optionalWasher = repo.findById(id);
 
 	        if (optionalWasher == null) {
 	            throw new WasherNotFoundException("Washer not existing with id: " + id);
 	        }
 	        Washers washer = optionalWasher.get();
 	        repo.delete(washer);
+	        logger.info("Successfully deleted washer");
 	    } 
 		
 
 	@Override
 	public List<Washers> getWashers() {
 		// TODO Auto-generated method stub
+		logger.info("Getting list of washers");
 		return repo.findAll();
 	
 	}

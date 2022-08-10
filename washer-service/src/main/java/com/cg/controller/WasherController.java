@@ -5,6 +5,8 @@ import java.util.Arrays;
 //import java.util.Arrays;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 //import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,6 +48,7 @@ public class WasherController
      * Modification Date:23/07/22
      * 
      */
+	Logger logger = LoggerFactory.getLogger(WasherController.class);
 	@Autowired
 	private LoginService wahser;
 	
@@ -58,14 +61,16 @@ public class WasherController
     @PostMapping("/addwasher")
     @ApiOperation(value = "To Add washer Details")
     public String saveUser(@RequestBody Washers washer) {
-    	 service.save(washer);
+    	logger.info("Adding washer"); 
+    	service.save(washer);
     	 return "you Are working With A1A Carwash";
     }
 
     @PutMapping("/account/update")
     @ApiOperation(value = "To Update washer Details")
     public String updateRegistrationDetails(@RequestBody Washers user, @RequestParam int id) {
-    	 service.save(user);
+    	logger.info("Updating registration details"); 
+    	service.save(user);
     	 return "update of details Successfull";
 
     }
@@ -73,24 +78,28 @@ public class WasherController
     @GetMapping("/allwasher")
     @ApiOperation(value = "To Get all washer Details")
     public List<Washers> findAll(){
+    	logger.info("Getting all washers");
     	return service.getWashers();
     }
 
     @DeleteMapping("/account/delete")
     @ApiOperation(value = "To delete washer ")
     public String deletewasher( @RequestParam int id ) {
-    	 this.service.deleteWasher(id);
+    	 logger.info("Deleting washer"); 
+    	this.service.deleteWasher(id);
     	 return "Account Delete Happy to work With you";
     }
     @PostMapping("/login")
 	@ApiOperation(value = "To Add Login Details")
 	public String userWasher(@RequestBody WasherLogin login) {
-		return wahser.userWasher(login);
+    	logger.info("Adding login details for user");
+    	return wahser.userWasher(login);
 	}
     
     @GetMapping("/viewWasher/{Id}")
 	public ResponseEntity<Washers> viewWasher(@PathVariable int Id) 
 	{
+    	 logger.info("view all washer by id");
 			Washers washer =service.viewWasher(Id);
 			return new ResponseEntity<Washers>(washer,HttpStatus.OK);
 	}

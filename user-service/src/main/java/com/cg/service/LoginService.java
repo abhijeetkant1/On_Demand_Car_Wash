@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.cg.repository.UserRepo;
 import com.cg.models.UserLogin;
-import com.cg.models.Signup;
+import com.cg.models.UserDetail;
 
 
 @Service
@@ -19,7 +19,7 @@ public class LoginService {
 	private UserRepo userRepository;
 
 	public String userLogin(UserLogin login) {
-		ArrayList<Signup> list = (ArrayList<Signup>) userRepository.findAll();
+		ArrayList<UserDetail> list = (ArrayList<UserDetail>) userRepository.findAll();
 		int count = 0;
 
 		for (int i = 0; i < list.size(); i++) {

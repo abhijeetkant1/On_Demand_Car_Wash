@@ -5,6 +5,9 @@ import java.util.Objects;
 import java.util.Optional;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -20,19 +23,24 @@ import com.cg.repository.OrderRepo;
 @Service
 public class OrderServiceImplementation implements OrderService{
 
+	Logger logger = LoggerFactory.getLogger(OrderServiceImplementation.class);
 	@Autowired
 	private OrderRepo repo;
 
 	@Override
 	public OrderDetails addOrder(OrderDetails order) {
 		// TODO Auto-generated method stub
+		logger.info("Adding Order by orderdetails");
 		OrderDetails addOrder=repo.save(order);
+		logger.info("Successfully Adding Order by orderdetails");
 		return addOrder;
 	}
 	@Override
 	public List<OrderDetails> orderDetails() {
 		// TODO Auto-generated method stub
+		 logger.info("Getting Order list");
 		List<OrderDetails> order=repo.findAll();
+		 logger.info("Successfully got list of orders");
 		return order;
 	}
 
@@ -40,30 +48,32 @@ public class OrderServiceImplementation implements OrderService{
 	public OrderDetails updateOrder(OrderDetails update) {
 		// TODO Auto-generated method stub
 		Optional<OrderDetails> optionalOrder = repo.findById(update.getOrderId());
-
+		logger.info("Updating order details");
 		if (optionalOrder == null) {
 			throw new OrderNotFoundException("order not exising with id: " + update.getOrderId());
 		}
 
 		OrderDetails updateOrder = repo.save(update);
-
+		logger.info("Successfully Updated Order");
 		return updateOrder;
 	}
 	public boolean existsById(int id)
 	{
+		 logger.info("Order exists by id");
 		return repo.existsById(id);
 		
 	}
 	@Override
 	public void deleteById(int id) {
 		Optional<OrderDetails> optionalOrder = repo.findById(id);
-
+		logger.info("deleted order by id");
 		if (optionalOrder == null) {
 			throw new OrderNotFoundException("User not exising with id: " + id);
 		}
 
 		OrderDetails order = optionalOrder.get();
 		repo.delete(order);
+		logger.info("Succesfully deleted order by id");
 
 	}
 	
@@ -71,6 +81,7 @@ public class OrderServiceImplementation implements OrderService{
     public     OrderDetails viewOrder(int id) {
         // TODO Auto-generated method stub
         Optional<OrderDetails> optionalOrder = repo.findById(id);
+        logger.info("view order by id");
         if(optionalOrder.isEmpty()) {
             throw new OrderNotFoundException("Order  not existing with id: "+id);
         }

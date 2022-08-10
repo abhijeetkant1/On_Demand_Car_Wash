@@ -2,6 +2,8 @@ package com.cg.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,12 +38,13 @@ public class OrderController
 	@Autowired
 	private OrderService orderservice;
 
-	
+	Logger logger = LoggerFactory.getLogger(OrderController.class);
 
 	// Order Operations
 	@PostMapping("/addorder")
 	@ApiOperation(value = "To Add new order")
 	public String addOrder(@RequestBody OrderDetails order) {
+		 logger.info("Adding Order");
 		order.setOrderId(orderservice.getSequenceNumber(OrderDetails.SEQUENCE_NAME));
 		orderservice.addOrder(order);
 		return "order placed with washer" + order;
@@ -49,40 +52,38 @@ public class OrderController
 
 	@GetMapping("/allorders")
 	@ApiOperation(value = "To Get all order Details")
-	public List<OrderDetails> orderDetails() {
+	public List<OrderDetails> orderDetails() 
+	{
+		logger.info("Fetching all Orders");
 		return orderservice.orderDetails();
 	}
 
 	@PutMapping("/updateorder")
 	@ApiOperation(value = "To update order Details")
 	public String updateOrder( @RequestBody OrderDetails update) {
+		logger.info("Updating Order Details");
 		orderservice.updateOrder(update);
 		return "Updated sucessfully";
 	}
 
-//	@DeleteMapping("/cancelorder/{id}")
-//	@ApiOperation(value = "Deletes order by Id")
-//	public ResponseEntity<Object> deleteById(@RequestParam int id) {
-//		boolean isOrderExist = orderservice.existsById(id);
-//		if (isOrderExist) {
-//			orderservice.deleteById(id);
-//			return new ResponseEntity<Object>("Order deleted with id " + id, HttpStatus.OK);
-//		} else {
-//			throw new ApiRequestException("ORDER NOT FOUND WITH THIS ID:" + id);
-//		}
+
 	
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> deleteOrderById(@PathVariable("id") int id) {
 		ResponseEntity<String> responseEntity = null;
+		logger.info("Deleting order by Id");
 		orderservice.deleteById(id);
 		responseEntity = new ResponseEntity<>("order deleted successfully", HttpStatus.OK);
+		logger.info("Deleted order successfully");
 		return responseEntity;
 	}
 	@GetMapping("/viewOrder/{Id}")
     public ResponseEntity<OrderDetails> viewOrder(@PathVariable int Id)
     {
-            OrderDetails order =orderservice.viewOrder(Id);
-            return new ResponseEntity<OrderDetails>(order,HttpStatus.OK);
+		 logger.info("view order by Id");    
+		OrderDetails order =orderservice.viewOrder(Id);
+		 logger.info("Successfully got all order by id");   
+		return new ResponseEntity<OrderDetails>(order,HttpStatus.OK);
     }
 }
 
