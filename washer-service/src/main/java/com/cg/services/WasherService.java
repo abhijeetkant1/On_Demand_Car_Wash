@@ -13,7 +13,7 @@ public interface WasherService {
 
 	void deleteWasher(int id);
 
-	public long getSequenceNumber(String sequenceName);
+	public int getSequenceNumber(String sequenceName);
 	public  Washers viewWasher(int id);
 	//Washers updateWasherDetails(Washers washer);
 }

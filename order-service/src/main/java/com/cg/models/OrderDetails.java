@@ -1,6 +1,7 @@
 package com.cg.models;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -24,6 +25,8 @@ public class OrderDetails
 	private Long contactno;
 	@NotEmpty(message = "address must not be empty")
 	private String address;
+	@NotNull(message="cost sholud not be null")
+	private int cost;
 
 	
 	@Transient
@@ -41,7 +44,8 @@ public class OrderDetails
 			@NotEmpty(message = "UserName must not be empty") String username,
 			@NotEmpty(message = "date must not be empty") String date,
 			@NotEmpty(message = "contact must not be empty") Long contactno,
-			@NotEmpty(message = "address must not be empty") String address) {
+			@NotEmpty(message = "address must not be empty") String address,
+			@NotNull(message = "cost sholud not be null") int cost) {
 		super();
 		this.orderId = orderId;
 		this.carName = carName;
@@ -50,6 +54,7 @@ public class OrderDetails
 		this.date = date;
 		this.contactno = contactno;
 		this.address = address;
+		this.cost = cost;
 	}
 
 
@@ -123,6 +128,16 @@ public class OrderDetails
 	}
 
 
+	public int getCost() {
+		return cost;
+	}
+
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
+
 	public static String getSequenceName() {
 		return SEQUENCE_NAME;
 	}
@@ -131,7 +146,9 @@ public class OrderDetails
 	@Override
 	public String toString() {
 		return "OrderDetails [orderId=" + orderId + ", carName=" + carName + ", carModel=" + carModel + ", username="
-				+ username + ", date=" + date + ", contactno=" + contactno + ", address=" + address + "]";
+				+ username + ", date=" + date + ", contactno=" + contactno + ", address=" + address + ", cost=" + cost
+				+ "]";
 	}
+
 
 }

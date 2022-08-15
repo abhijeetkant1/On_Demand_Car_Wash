@@ -1,118 +1,233 @@
-2022-08-09 20:04:20.588  INFO 22788 --- [restartedMain] com.cg.OrderServiceApplication           : Starting OrderServiceApplication using Java 17.0.2 on LIN24010827 with PID 22788 (C:\Users\AKANTKUS\Desktop\On Demand Car Wash System(MicroServices) BackEnd\order-service\target\classes started by akantkus in C:\Users\AKANTKUS\Desktop\On Demand Car Wash System(MicroServices) BackEnd\order-service)
-2022-08-09 20:04:20.601  INFO 22788 --- [restartedMain] com.cg.OrderServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-08-09 20:04:20.724  INFO 22788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-08-09 20:04:20.725  INFO 22788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-08-09 20:04:22.953  INFO 22788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-08-09 20:04:23.309  INFO 22788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 347 ms. Found 1 MongoDB repository interfaces.
-2022-08-09 20:04:24.013  INFO 22788 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7d8c755a-e120-30b9-bcf7-e0ab2a6d2564
-2022-08-09 20:04:25.284  INFO 22788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2022-08-09 20:04:25.304  INFO 22788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-08-09 20:04:25.306  INFO 22788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-08-09 20:04:25.624  INFO 22788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-08-09 20:04:25.625  INFO 22788 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4900 ms
-2022-08-09 20:04:26.159  INFO 22788 --- [restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.2+8"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='Abhi31march', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@78ccadaa]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.qyluq6u.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-drnppv-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2022-08-09 20:04:26.187  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017 to client view of cluster
-2022-08-09 20:04:26.227  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017 to client view of cluster
-2022-08-09 20:04:26.228  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017 to client view of cluster
-2022-08-09 20:04:26.412  WARN 22788 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
-2022-08-09 20:04:26.630  WARN 22788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2022-08-09 20:04:26.844  INFO 22788 --- [cluster-rtt-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:12071}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.844  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:12071}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.844  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:11506}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.844  INFO 22788 --- [cluster-rtt-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:11506}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.845  INFO 22788 --- [cluster-rtt-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:12566}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.845  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=300960100, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f20858cb1f0ac7c456b0cb, counter=4}, lastWriteDate=Tue Aug 09 20:04:26 IST 2022, lastUpdateTimeNanos=1222656095776300}
-2022-08-09 20:04:26.845  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=298767600, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f20affa531ce16311419ff, counter=3}, lastWriteDate=Tue Aug 09 20:04:26 IST 2022, lastUpdateTimeNanos=1222656095941000}
-2022-08-09 20:04:26.844  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:12566}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.848  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=298467600, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000143, setVersion=7, topologyVersion=TopologyVersion{processId=62f209b13fa660fc3d7c9c72, counter=6}, lastWriteDate=Tue Aug 09 20:04:26 IST 2022, lastUpdateTimeNanos=1222656095782400}
-2022-08-09 20:04:26.852  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000143 from replica set primary ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.853  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 7 from replica set primary ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.853  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 20:04:26.947  WARN 22788 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
-2022-08-09 20:04:28.175  INFO 22788 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2022-08-09 20:04:28.959  INFO 22788 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-08-09 20:04:29.489  WARN 22788 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-08-09 20:04:29.767  INFO 22788 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-08-09 20:04:29.868  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-08-09 20:04:29.877  INFO 22788 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:04:29.930  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-08-09 20:04:29.932  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-08-09 20:04:29.933  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-08-09 20:04:29.933  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-08-09 20:04:29.933  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-08-09 20:04:29.934  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-08-09 20:04:29.934  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-08-09 20:04:30.507  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-08-09 20:04:30.520  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-08-09 20:04:30.533  INFO 22788 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-08-09 20:04:30.561  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1660055670559 with initial instances count: 0
-2022-08-09 20:04:30.563  INFO 22788 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
-2022-08-09 20:04:30.564  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1660055670564, current=UP, previous=STARTING]
-2022-08-09 20:04:30.567  INFO 22788 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081: registering service...
-2022-08-09 20:04:30.620  INFO 22788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2022-08-09 20:04:30.622  INFO 22788 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
-2022-08-09 20:04:30.773  INFO 22788 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - registration status: 204
-2022-08-09 20:04:30.912  INFO 22788 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2022-08-09 20:04:30.940  INFO 22788 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2022-08-09 20:04:31.001  INFO 22788 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2022-08-09 20:04:31.236  INFO 22788 --- [restartedMain] com.cg.OrderServiceApplication           : Started OrderServiceApplication in 12.186 seconds (JVM running for 16.317)
-2022-08-09 20:05:00.528  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-08-09 20:05:00.529  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-08-09 20:05:00.529  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-08-09 20:05:00.529  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-08-09 20:05:00.529  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-08-09 20:05:00.529  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2022-08-09 20:05:00.529  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-08-09 20:05:00.554  INFO 22788 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-08-09 20:09:29.942  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:11:57.564  INFO 22788 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-08-09 20:11:57.565  INFO 22788 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-08-09 20:11:57.568  INFO 22788 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2022-08-09 20:11:57.627  INFO 22788 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Fetching all Orders
-2022-08-09 20:11:57.628  INFO 22788 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : Getting Order list
-2022-08-09 20:11:58.147  INFO 22788 --- [http-nio-8081-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:12943}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 20:11:58.270  INFO 22788 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : Successfully got list of orders
-2022-08-09 20:14:29.950  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:17:13.747  INFO 22788 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : Fetching all Orders
-2022-08-09 20:17:13.749  INFO 22788 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : Getting Order list
-2022-08-09 20:17:13.795  INFO 22788 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : Successfully got list of orders
-2022-08-09 20:19:29.964  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:24:29.967  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:26:40.440  INFO 22788 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : Fetching all Orders
-2022-08-09 20:26:40.441  INFO 22788 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : Getting Order list
-2022-08-09 20:26:40.559  INFO 22788 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : Successfully got list of orders
-2022-08-09 20:28:18.021  INFO 22788 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : Adding Order
-2022-08-09 20:28:18.178  INFO 22788 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : Adding Order by orderdetails
-2022-08-09 20:28:18.368  INFO 22788 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : Successfully Adding Order by orderdetails
-2022-08-09 20:29:29.977  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:32:20.221  INFO 22788 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Fetching all Orders
-2022-08-09 20:32:20.222  INFO 22788 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : Getting Order list
-2022-08-09 20:32:20.262  INFO 22788 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : Successfully got list of orders
-2022-08-09 20:33:48.486  INFO 22788 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : Adding Order
-2022-08-09 20:33:48.486  INFO 22788 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Adding Order
-2022-08-09 20:33:48.532  INFO 22788 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : Adding Order by orderdetails
-2022-08-09 20:33:48.576  INFO 22788 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : Successfully Adding Order by orderdetails
-2022-08-09 20:33:48.766  INFO 22788 --- [http-nio-8081-exec-3] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:8, serverValue:13313}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 20:33:48.814  INFO 22788 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Adding Order by orderdetails
-2022-08-09 20:33:48.860  INFO 22788 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Successfully Adding Order by orderdetails
-2022-08-09 20:34:29.977  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:36:35.359  INFO 22788 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : Adding Order
-2022-08-09 20:36:35.359  INFO 22788 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : Adding Order
-2022-08-09 20:36:35.408  INFO 22788 --- [http-nio-8081-exec-7] c.c.services.OrderServiceImplementation  : Adding Order by orderdetails
-2022-08-09 20:36:35.435  INFO 22788 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : Adding Order by orderdetails
-2022-08-09 20:36:35.457  INFO 22788 --- [http-nio-8081-exec-7] c.c.services.OrderServiceImplementation  : Successfully Adding Order by orderdetails
-2022-08-09 20:36:35.488  INFO 22788 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : Successfully Adding Order by orderdetails
-2022-08-09 20:39:29.979  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:43:43.721  INFO 22788 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Fetching all Orders
-2022-08-09 20:43:43.721  INFO 22788 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : Getting Order list
-2022-08-09 20:43:43.764  INFO 22788 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : Successfully got list of orders
-2022-08-09 20:44:29.979  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:45:55.224  INFO 22788 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : Fetching all Orders
-2022-08-09 20:45:55.225  INFO 22788 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : Getting Order list
-2022-08-09 20:45:55.269  INFO 22788 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : Successfully got list of orders
-2022-08-09 20:49:29.993  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 20:54:30.002  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 21:11:15.607  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 19:54:53.190  INFO 14252 --- [restartedMain] com.cg.OrderServiceApplication           : Starting OrderServiceApplication using Java 17.0.2 on LIN24010827 with PID 14252 (C:\Users\AKANTKUS\Desktop\On Demand Car Wash System(MicroServices) BackEnd\order-service\target\classes started by akantkus in C:\Users\AKANTKUS\Desktop\On Demand Car Wash System(MicroServices) BackEnd\order-service)
+2022-08-14 19:54:53.212  INFO 14252 --- [restartedMain] com.cg.OrderServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-14 19:54:53.455  INFO 14252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-14 19:54:53.456  INFO 14252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-14 19:54:57.303  INFO 14252 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-08-14 19:54:57.743  INFO 14252 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 425 ms. Found 1 MongoDB repository interfaces.
+2022-08-14 19:54:58.477  INFO 14252 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7d8c755a-e120-30b9-bcf7-e0ab2a6d2564
+2022-08-14 19:55:00.219  INFO 14252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-14 19:55:00.248  INFO 14252 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-14 19:55:00.249  INFO 14252 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-08-14 19:55:00.592  INFO 14252 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-14 19:55:00.593  INFO 14252 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7135 ms
+2022-08-14 19:55:01.211  INFO 14252 --- [restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.2+8"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='Abhi31march', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@56f822b0]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.qyluq6u.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-drnppv-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-08-14 19:55:01.241  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017 to client view of cluster
+2022-08-14 19:55:01.298  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017 to client view of cluster
+2022-08-14 19:55:01.302  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017 to client view of cluster
+2022-08-14 19:55:01.492  WARN 14252 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-08-14 19:55:01.790  WARN 14252 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-08-14 19:55:01.987  WARN 14252 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-08-14 19:55:02.314  INFO 14252 --- [cluster-rtt-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:5888}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.315  INFO 14252 --- [cluster-rtt-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:6773}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.316  INFO 14252 --- [cluster-rtt-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6205}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.316  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5887}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.316  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=270528900, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f8d1786ebc10ec52b265fd, counter=3}, lastWriteDate=Sun Aug 14 19:55:02 IST 2022, lastUpdateTimeNanos=82880165386600}
+2022-08-14 19:55:02.315  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:6205}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.315  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:6773}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.318  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=364471700, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f8cf768a3b563e6cbc9dad, counter=4}, lastWriteDate=Sun Aug 14 19:55:02 IST 2022, lastUpdateTimeNanos=82880165386700}
+2022-08-14 19:55:02.318  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=364638400, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000146, setVersion=7, topologyVersion=TopologyVersion{processId=62f8d054397d6efd63b17509, counter=6}, lastWriteDate=Sun Aug 14 19:55:02 IST 2022, lastUpdateTimeNanos=82880165591500}
+2022-08-14 19:55:02.324  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000146 from replica set primary ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.324  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 7 from replica set primary ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:02.327  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 19:55:04.074  INFO 14252 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-14 19:55:06.408  INFO 14252 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-08-14 19:55:07.541  WARN 14252 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-08-14 19:55:07.769  INFO 14252 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-08-14 19:55:07.898  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-08-14 19:55:07.917  INFO 14252 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 19:55:08.006  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-08-14 19:55:08.007  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-08-14 19:55:08.007  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-08-14 19:55:08.007  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-08-14 19:55:08.008  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-08-14 19:55:08.008  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-08-14 19:55:08.008  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-08-14 19:55:08.860  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-08-14 19:55:08.915  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-08-14 19:55:08.958  INFO 14252 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-08-14 19:55:08.993  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1660487108990 with initial instances count: 0
+2022-08-14 19:55:08.996  INFO 14252 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2022-08-14 19:55:08.998  INFO 14252 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1660487108998, current=UP, previous=STARTING]
+2022-08-14 19:55:09.001  INFO 14252 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081: registering service...
+2022-08-14 19:55:09.073  INFO 14252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-08-14 19:55:09.075  INFO 14252 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2022-08-14 19:55:09.115  INFO 14252 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - registration status: 204
+2022-08-14 19:55:09.553  INFO 14252 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-08-14 19:55:09.592  INFO 14252 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-08-14 19:55:09.668  INFO 14252 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-08-14 19:55:10.013  INFO 14252 --- [restartedMain] com.cg.OrderServiceApplication           : Started OrderServiceApplication in 18.535 seconds (JVM running for 22.072)
+2022-08-14 19:55:38.917  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-08-14 19:55:38.918  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-08-14 19:55:38.918  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-08-14 19:55:38.918  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-08-14 19:55:38.918  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-08-14 19:55:38.919  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-08-14 19:55:38.919  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-08-14 19:55:38.941  INFO 14252 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-08-14 20:00:08.028  INFO 14252 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 20:05:08.037  INFO 14252 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 20:07:31.921  INFO 14252 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-14 20:07:31.922  INFO 14252 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-14 20:07:31.925  INFO 14252 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-08-14 20:07:31.978  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 20:07:31.978  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 20:07:32.451  INFO 14252 --- [http-nio-8081-exec-3] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:7037}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 20:07:32.611  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 20:08:04.721  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 20:08:04.723  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 20:08:04.767  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 20:08:15.021  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.081  INFO 14252 --- [http-nio-8081-exec-7] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.082  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.101  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.164  INFO 14252 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.164  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.174  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.220  INFO 14252 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.221  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.232  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.281  INFO 14252 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.282  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.292  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.335  INFO 14252 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.335  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.346  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.389  INFO 14252 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.390  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.403  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.446  INFO 14252 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.446  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.457  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.502  INFO 14252 --- [http-nio-8081-exec-10] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.503  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.514  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.554  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.554  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.567  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.607  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.608  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.617  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.663  INFO 14252 --- [http-nio-8081-exec-7] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.664  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.673  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.721  INFO 14252 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.722  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.734  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.777  INFO 14252 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.777  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.787  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.833  INFO 14252 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.834  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.847  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.899  INFO 14252 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.899  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.911  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:15.961  INFO 14252 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:15.962  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:15.973  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.015  INFO 14252 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.015  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.047  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.090  INFO 14252 --- [http-nio-8081-exec-10] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.090  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.101  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.144  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.144  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.152  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.201  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.202  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.214  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.258  INFO 14252 --- [http-nio-8081-exec-7] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.259  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.271  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.312  INFO 14252 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.312  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.324  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.372  INFO 14252 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.372  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.387  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.430  INFO 14252 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.431  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.440  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.498  INFO 14252 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.499  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.516  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.557  INFO 14252 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.558  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.577  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.636  INFO 14252 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.636  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.652  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.705  INFO 14252 --- [http-nio-8081-exec-10] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.705  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.720  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.765  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.765  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.777  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.824  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.825  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.833  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:16.879  INFO 14252 --- [http-nio-8081-exec-7] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:16.879  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:16.890  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.169  INFO 14252 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.169  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.181  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.223  INFO 14252 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.223  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.235  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.280  INFO 14252 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.280  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.291  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.334  INFO 14252 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.334  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.345  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.402  INFO 14252 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.403  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.415  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.462  INFO 14252 --- [http-nio-8081-exec-9] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.462  INFO 14252 --- [http-nio-8081-exec-9] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.472  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.524  INFO 14252 --- [http-nio-8081-exec-10] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.524  INFO 14252 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.535  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.578  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.579  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.589  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.633  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.634  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.642  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.685  INFO 14252 --- [http-nio-8081-exec-7] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.685  INFO 14252 --- [http-nio-8081-exec-7] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.699  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.744  INFO 14252 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.744  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.754  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.802  INFO 14252 --- [http-nio-8081-exec-1] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.802  INFO 14252 --- [http-nio-8081-exec-1] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:17.815  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : view order by Id
+2022-08-14 20:08:17.843  INFO 14252 --- [http-nio-8081-exec-5] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 20:08:17.845  INFO 14252 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 20:08:17.855  INFO 14252 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : view order by id
+2022-08-14 20:08:17.856  INFO 14252 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : Successfully got all order by id
+2022-08-14 20:08:18.248  INFO 14252 --- [http-nio-8081-exec-5] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:8, serverValue:7065}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 20:08:18.286  INFO 14252 --- [http-nio-8081-exec-5] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 20:08:27.680  INFO 14252 --- [http-nio-8081-exec-6] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 20:08:27.680  INFO 14252 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 20:08:27.978  INFO 14252 --- [http-nio-8081-exec-6] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 20:10:08.044  INFO 14252 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 20:10:36.416  INFO 14252 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 20:10:36.417  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 20:10:36.464  INFO 14252 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 20:11:01.149  INFO 14252 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 20:11:01.150  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 20:11:01.194  INFO 14252 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 20:15:08.059  INFO 14252 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 20:17:03.025  INFO 14252 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 20:17:03.026  INFO 14252 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 20:17:03.073  INFO 14252 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 20:20:08.071  INFO 14252 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 20:22:03.393  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
 
 com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
 	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:696) ~[mongodb-driver-core-4.6.1.jar:na]
@@ -139,7 +254,7 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
 	... 5 common frames omitted
 
-2022-08-09 21:11:15.614  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
+2022-08-14 20:22:03.451  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
 
 com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
 	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:696) ~[mongodb-driver-core-4.6.1.jar:na]
@@ -166,7 +281,7 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
 	... 5 common frames omitted
 
-2022-08-09 21:11:15.615  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
+2022-08-14 20:22:03.497  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
 
 com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
 	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:696) ~[mongodb-driver-core-4.6.1.jar:na]
@@ -193,31 +308,458 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
 	... 5 common frames omitted
 
-2022-08-09 21:11:15.773  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:9, serverValue:13214}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
-2022-08-09 21:11:15.775  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=114176900, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f20affa531ce16311419ff, counter=3}, lastWriteDate=Tue Aug 09 21:11:15 IST 2022, lastUpdateTimeNanos=1226665029781900}
-2022-08-09 21:11:15.786  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:10, serverValue:14490}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 21:11:15.787  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=127822300, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000143, setVersion=7, topologyVersion=TopologyVersion{processId=62f209b13fa660fc3d7c9c72, counter=6}, lastWriteDate=Tue Aug 09 21:11:15 IST 2022, lastUpdateTimeNanos=1226665043691700}
-2022-08-09 21:11:15.787  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 21:11:15.794  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:11, serverValue:13784}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
-2022-08-09 21:11:15.794  INFO 22788 --- [cluster-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=95546200, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f20858cb1f0ac7c456b0cb, counter=4}, lastWriteDate=Tue Aug 09 21:11:15 IST 2022, lastUpdateTimeNanos=1226665051159800}
-2022-08-09 21:11:20.637  INFO 22788 --- [cluster-rtt-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:12, serverValue:14386}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 21:11:20.969  INFO 22788 --- [cluster-rtt-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:13, serverValue:13792}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
-2022-08-09 21:11:20.977  INFO 22788 --- [cluster-rtt-ClusterId{value='62f27072b4c5c911b9ec1e07', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:14, serverValue:13218}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
-2022-08-09 21:13:02.890  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 21:18:02.904  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 21:23:02.916  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 21:28:02.928  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 21:33:02.926  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 21:38:02.941  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-08-09 21:38:42.283  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-08-09 21:38:42.284  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
-2022-08-09 21:38:42.285  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1660061322285, current=DOWN, previous=UP]
-2022-08-09 21:38:42.288  INFO 22788 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081: registering service...
-2022-08-09 21:38:42.312  INFO 22788 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - registration status: 204
-2022-08-09 21:38:42.668  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:15, serverValue:15159}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
-2022-08-09 21:38:42.819  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-08-09 21:38:45.843  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-08-09 21:38:45.849  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-08-14 20:22:13.407  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:546) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:299) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 4 common frames omitted
+
+2022-08-14 20:22:13.469  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:546) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:299) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 4 common frames omitted
+
+2022-08-14 20:22:13.500  INFO 14252 --- [cluster-ClusterId{value='62f905bdbdf3525108bff680', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:546) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:299) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 4 common frames omitted
+
+2022-08-14 20:25:08.077  INFO 14252 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 20:30:08.072  INFO 14252 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 20:35:00.537  INFO 14252 --- [RMI TCP Connection(52)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-08-14 20:35:00.538  INFO 14252 --- [RMI TCP Connection(52)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2022-08-14 20:35:00.539  INFO 14252 --- [RMI TCP Connection(52)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1660489500539, current=DOWN, previous=UP]
+2022-08-14 20:35:00.539  INFO 14252 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081: registering service...
+2022-08-14 20:35:00.553  INFO 14252 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - registration status: 204
+2022-08-14 20:35:00.596  INFO 14252 --- [RMI TCP Connection(52)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-08-14 20:35:03.620  INFO 14252 --- [RMI TCP Connection(52)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-08-14 20:35:03.625  INFO 14252 --- [RMI TCP Connection(52)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - deregister  status: 200
+2022-08-14 20:35:03.684  INFO 14252 --- [RMI TCP Connection(52)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-08-14 21:30:36.175  INFO 14260 --- [restartedMain] com.cg.OrderServiceApplication           : Starting OrderServiceApplication using Java 17.0.2 on LIN24010827 with PID 14260 (C:\Users\AKANTKUS\Desktop\On Demand Car Wash System(MicroServices) BackEnd\order-service\target\classes started by akantkus in C:\Users\AKANTKUS\Desktop\On Demand Car Wash System(MicroServices) BackEnd\order-service)
+2022-08-14 21:30:36.178  INFO 14260 --- [restartedMain] com.cg.OrderServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-14 21:30:36.354  INFO 14260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-14 21:30:36.355  INFO 14260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-14 21:30:39.477  INFO 14260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-08-14 21:30:40.294  INFO 14260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 763 ms. Found 1 MongoDB repository interfaces.
+2022-08-14 21:30:41.124  INFO 14260 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7d8c755a-e120-30b9-bcf7-e0ab2a6d2564
+2022-08-14 21:30:43.819  INFO 14260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-14 21:30:43.837  INFO 14260 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-14 21:30:43.838  INFO 14260 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-08-14 21:30:44.143  INFO 14260 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-14 21:30:44.144  INFO 14260 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7788 ms
+2022-08-14 21:30:46.095  INFO 14260 --- [restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.2+8"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='Abhi31march', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@66cfc4ab]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.qyluq6u.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-drnppv-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-08-14 21:30:46.141  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017 to client view of cluster
+2022-08-14 21:30:46.169  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017 to client view of cluster
+2022-08-14 21:30:46.173  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-srv-cluster0.qyluq6u.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017 to client view of cluster
+2022-08-14 21:30:46.538  WARN 14260 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-08-14 21:30:47.215  WARN 14260 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-08-14 21:30:47.308  INFO 14260 --- [cluster-rtt-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:8019}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.308  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:8019}] to ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.308  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:8670}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.309  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=530918500, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000146, setVersion=7, topologyVersion=TopologyVersion{processId=62f8d054397d6efd63b17509, counter=6}, lastWriteDate=Sun Aug 14 21:30:47 IST 2022, lastUpdateTimeNanos=1921131249300}
+2022-08-14 21:30:47.309  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=526664600, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f8cf768a3b563e6cbc9dad, counter=4}, lastWriteDate=Sun Aug 14 21:30:47 IST 2022, lastUpdateTimeNanos=1921130091800}
+2022-08-14 21:30:47.309  INFO 14260 --- [cluster-rtt-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:8665}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.315  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000146 from replica set primary ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.316  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 7 from replica set primary ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.316  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.385  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:7682}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.386  INFO 14260 --- [cluster-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=112568500, setName='atlas-drnppv-shard-0', canonicalAddress=ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, hosts=[ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-00.qyluq6u.mongodb.net:27017, ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017], passives=[], arbiters=[], primary='ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62f8d1786ebc10ec52b265fd, counter=3}, lastWriteDate=Sun Aug 14 21:30:47 IST 2022, lastUpdateTimeNanos=1921209021700}
+2022-08-14 21:30:47.428  INFO 14260 --- [cluster-rtt-ClusterId{value='62f91c2d6cba9528a483e0fe', description='null'}-ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:7682}] to ac-uctqwar-shard-00-02.qyluq6u.mongodb.net:27017
+2022-08-14 21:30:47.454  WARN 14260 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-08-14 21:30:48.877  INFO 14260 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-14 21:30:51.907  INFO 14260 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-08-14 21:30:56.963  WARN 14260 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-08-14 21:30:57.145  INFO 14260 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-08-14 21:30:57.652  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-08-14 21:30:57.707  INFO 14260 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 21:30:57.852  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-08-14 21:30:57.853  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-08-14 21:30:57.853  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-08-14 21:30:57.853  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-08-14 21:30:57.853  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-08-14 21:30:57.854  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-08-14 21:30:57.854  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-08-14 21:30:58.799  INFO 14260 --- [restartedMain] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$b0292db7.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.cg.OrderServiceApplication.main(OrderServiceApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 73 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 86 more
+
+2022-08-14 21:30:58.803  WARN 14260 --- [restartedMain] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-08-14 21:30:58.804  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$b0292db7.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.cg.OrderServiceApplication.main(OrderServiceApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+
+2022-08-14 21:30:58.813  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from primary servers failed
+2022-08-14 21:30:58.814  WARN 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
+2022-08-14 21:30:58.815  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from backup servers failed
+2022-08-14 21:30:58.817  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-08-14 21:30:58.823  INFO 14260 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-08-14 21:30:58.833  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1660492858831 with initial instances count: 0
+2022-08-14 21:30:58.836  INFO 14260 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2022-08-14 21:30:58.837  INFO 14260 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1660492858837, current=UP, previous=STARTING]
+2022-08-14 21:30:58.894  INFO 14260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-08-14 21:30:58.897  INFO 14260 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2022-08-14 21:30:58.986  INFO 14260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081: registering service...
+2022-08-14 21:30:59.079  INFO 14260 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/ORDER-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/ORDER-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 22 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 35 more
+
+2022-08-14 21:30:59.081  WARN 14260 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/ORDER-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-08-14 21:30:59.090  WARN 14260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-08-14 21:30:59.092  WARN 14260 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-08-14 21:30:59.635  INFO 14260 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-08-14 21:30:59.660  INFO 14260 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-08-14 21:30:59.736  INFO 14260 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-08-14 21:31:00.031  INFO 14260 --- [restartedMain] com.cg.OrderServiceApplication           : Started OrderServiceApplication in 25.696 seconds (JVM running for 29.629)
+2022-08-14 21:31:28.835  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-08-14 21:31:28.836  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-08-14 21:31:28.836  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-08-14 21:31:28.836  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-08-14 21:31:28.836  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-08-14 21:31:28.836  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-08-14 21:31:28.837  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-08-14 21:31:28.903  INFO 14260 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - Re-registering apps/ORDER-SERVICE
+2022-08-14 21:31:28.904  INFO 14260 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081: registering service...
+2022-08-14 21:31:28.914  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-08-14 21:31:28.920  INFO 14260 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - registration status: 204
+2022-08-14 21:31:58.917  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-08-14 21:31:58.917  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-08-14 21:31:58.917  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-08-14 21:31:58.918  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-08-14 21:31:58.918  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-08-14 21:31:58.918  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-08-14 21:31:58.918  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-08-14 21:31:58.938  INFO 14260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-08-14 21:33:30.792  INFO 14260 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-14 21:33:30.793  INFO 14260 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-14 21:33:30.797  INFO 14260 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-14 21:33:30.868  INFO 14260 --- [http-nio-8081-exec-3] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 21:33:30.869  INFO 14260 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 21:33:31.403  INFO 14260 --- [http-nio-8081-exec-3] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:8627}] to ac-uctqwar-shard-00-01.qyluq6u.mongodb.net:27017
+2022-08-14 21:33:31.576  INFO 14260 --- [http-nio-8081-exec-3] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 21:35:57.858  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 21:40:57.863  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 21:45:57.863  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 21:50:57.857  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 21:55:57.868  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:00:57.883  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:05:57.889  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:10:57.900  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:15:06.004  INFO 14260 --- [http-nio-8081-exec-10] com.cg.controller.OrderController        : Adding Order
+2022-08-14 22:15:06.150  INFO 14260 --- [http-nio-8081-exec-10] c.c.services.OrderServiceImplementation  : Adding Order by orderdetails
+2022-08-14 22:15:06.270  INFO 14260 --- [http-nio-8081-exec-10] c.c.services.OrderServiceImplementation  : Successfully Adding Order by orderdetails
+2022-08-14 22:15:47.391  INFO 14260 --- [http-nio-8081-exec-2] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 22:15:47.393  INFO 14260 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 22:15:47.437  INFO 14260 --- [http-nio-8081-exec-2] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 22:15:57.913  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:20:26.965  INFO 14260 --- [http-nio-8081-exec-4] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 22:20:26.965  INFO 14260 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 22:20:27.204  INFO 14260 --- [http-nio-8081-exec-4] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 22:20:57.921  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:23:47.239  INFO 14260 --- [http-nio-8081-exec-8] com.cg.controller.OrderController        : Fetching all Orders
+2022-08-14 22:23:47.239  INFO 14260 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : Getting Order list
+2022-08-14 22:23:47.281  INFO 14260 --- [http-nio-8081-exec-8] c.c.services.OrderServiceImplementation  : Successfully got list of orders
+2022-08-14 22:25:57.924  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:30:57.931  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:35:57.933  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:40:57.942  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:45:57.943  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:50:57.956  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 22:55:57.960  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 23:00:57.970  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 23:05:57.977  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 23:10:57.992  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 23:15:58.000  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 23:20:58.006  INFO 14260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-08-14 23:21:14.875  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-08-14 23:21:14.878  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2022-08-14 23:21:14.879  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1660499474878, current=DOWN, previous=UP]
+2022-08-14 23:21:14.888  INFO 14260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081: registering service...
+2022-08-14 23:21:14.920  INFO 14260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - registration status: 204
+2022-08-14 23:21:15.184  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-08-14 23:21:18.193  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-08-14 23:21:18.201  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
@@ -260,7 +802,7 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:72)
-	at jdk.internal.reflect.GeneratedMethodAccessor64.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:262)
@@ -277,7 +819,7 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
-	at java.base/jdk.internal.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.GeneratedMethodAccessor67.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
@@ -320,8 +862,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 87 more
 
-2022-08-09 21:38:45.849  WARN 22788 --- [RMI TCP Connection(92)-127.0.0.1] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-08-09 21:38:45.855  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-08-14 23:21:18.201  WARN 14260 --- [RMI TCP Connection(141)-127.0.0.1] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-08-14 23:21:18.208  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
@@ -365,7 +907,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:72)
-	at jdk.internal.reflect.GeneratedMethodAccessor64.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:262)
@@ -382,7 +924,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
-	at java.base/jdk.internal.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.GeneratedMethodAccessor67.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
@@ -425,8 +967,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 88 more
 
-2022-08-09 21:38:45.855  WARN 22788 --- [RMI TCP Connection(92)-127.0.0.1] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-08-09 21:38:45.856 ERROR 22788 --- [RMI TCP Connection(92)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - de-registration failedCannot execute request on any known server
+2022-08-14 23:21:18.209  WARN 14260 --- [RMI TCP Connection(141)-127.0.0.1] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-08-14 23:21:18.210 ERROR 14260 --- [RMI TCP Connection(141)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LIN24010827.corp.capgemini.com:order-service:8081 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
@@ -463,7 +1005,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:72) ~[na:na]
-	at jdk.internal.reflect.GeneratedMethodAccessor64.invoke(Unknown Source) ~[na:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:262) ~[na:na]
@@ -480,7 +1022,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310) ~[na:na]
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405) ~[na:na]
 	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) ~[na:na]
-	at java.base/jdk.internal.reflect.GeneratedMethodAccessor65.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedMethodAccessor67.invoke(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360) ~[na:na]
@@ -497,4 +1039,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-2022-08-09 21:38:45.917  INFO 22788 --- [RMI TCP Connection(92)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-08-14 23:21:18.218  INFO 14260 --- [RMI TCP Connection(141)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

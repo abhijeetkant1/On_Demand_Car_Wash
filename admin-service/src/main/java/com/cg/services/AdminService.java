@@ -24,6 +24,8 @@ public interface AdminService {
 	public void saveWashpack(Washpack washpacks);
 	public void updateWashpack(Washpack updatepack);
 	public void deleteWashpack(int id);
+	
+	public int getSequenceNumber(String sequenceName);
 
 
 }

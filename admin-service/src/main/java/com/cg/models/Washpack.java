@@ -1,6 +1,7 @@
 package com.cg.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "washpackdb")
 public class Washpack {
@@ -9,6 +10,9 @@ public class Washpack {
 	private String packname;
 	private String description;
 	private Integer cost;
+	
+	@Transient
+    public static final String SEQUENCE_NAME = "users_sequence";
 	
 	
 	public Washpack(int id, String packname, String description, Integer cost) {
@@ -39,6 +43,10 @@ public class Washpack {
 	public Integer getCost() {
 		return cost;
 	}
+	public static String getSequenceName() {
+		return SEQUENCE_NAME;
+	}
+
 	public void setCost(Integer cost) {
 		this.cost = cost;
 	}

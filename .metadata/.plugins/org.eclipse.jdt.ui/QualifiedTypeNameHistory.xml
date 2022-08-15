@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.cloud.client.loadbalancer.LoadBalanced"/>
-    <fullyQualifiedTypeName name="com.cg.repository.OrderRepo"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.Pattern"/>
     <fullyQualifiedTypeName name="com.cg.repository.PaymentRepository"/>
     <fullyQualifiedTypeName name="com.google.common.base.Optional"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
     <fullyQualifiedTypeName name="com.cg.models.AuthenticationResponse"/>
     <fullyQualifiedTypeName name="com.cg.models.AuthenticationRequest"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
+    <fullyQualifiedTypeName name="com.cg.models.Washpack"/>
 </qualifiedTypeNameHistroy>

@@ -34,8 +34,7 @@ import io.swagger.annotations.ApiOperation;
 
 /* Name:Abhijeet kant
  * EmpId: 46195747
- * Creation Date:24/07/22
- * Modification Date:25/07/22
+ * 
  * 
  */
 @CrossOrigin("*")
@@ -94,6 +93,7 @@ public class AdminController
 	@ApiOperation(value = "To Add washpack Details")
 	public String saveWashpack(@RequestBody Washpack washpacks) {
     	logger.info("Adding washpacks");
+    	washpacks.setId(service.getSequenceNumber(Washpack.SEQUENCE_NAME));
     	service.saveWashpack(washpacks);
 		 return "WashPack Added Succesfully!!!";
 	}

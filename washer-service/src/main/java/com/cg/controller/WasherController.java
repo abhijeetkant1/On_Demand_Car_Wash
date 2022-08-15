@@ -44,8 +44,7 @@ public class WasherController
     
     /* Name:Abhijeet kant
      * EmpId: 46195747
-     * Creation Date:22/07/22
-     * Modification Date:23/07/22
+     * 
      * 
      */
 	Logger logger = LoggerFactory.getLogger(WasherController.class);

@@ -47,8 +47,7 @@ import com.cg.util.JwtUtil;
 import io.swagger.annotations.ApiOperation;
 /* Name:Abhijeet kant
  * EmpId: 46195747
- * Creation Date:24/07/22
- * Modification Date:25/07/22
+ * 
  * 
  */
 @CrossOrigin("*")

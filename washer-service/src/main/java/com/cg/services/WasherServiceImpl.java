@@ -88,22 +88,25 @@ public class WasherServiceImpl implements WasherService
 	
 	}
 	@Autowired
-    private  MongoOperations mongoOperations;
+	  private MongoOperations mongoOperations;
 
-	 public long getSequenceNumber(String sequenceName) {
-	        //get sequence no
-	        Query query = new Query(Criteria.where("id").is(sequenceName));
-	        //update the sequence no
-	        Update update = new Update().inc("seq", 1);
-	        //modify in document
-	        DatabaseSequence counter = mongoOperations.findAndModify(query,
-	                        update, options().returnNew(true).upsert(true),
-	                        DatabaseSequence.class);
 
-	        return !Objects.isNull(counter) ? counter.getSeq() : 1;
-	    
 
-	 }
+	  public int getSequenceNumber(String sequenceName) {
+	  //get sequence no
+	  Query query = new Query(Criteria.where("id").is(sequenceName));
+	  //update the sequence no
+	  Update update = new Update().inc("seq", 1);
+	  //modify in document
+	  DatabaseSequence counter = mongoOperations.findAndModify(query,
+	  update, options().returnNew(true).upsert(true),
+	  DatabaseSequence.class);
+
+
+
+	  return (int) (!Objects.isNull(counter) ? counter.getSeq() : 1);
+
+	  }
 
 
 }

@@ -2,18 +2,25 @@ package com.cg.services;
 
 
 
-import java.util.List;
+import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.cg.exception.AdminNotFoundException;
 import com.cg.exception.WashpackNotFoundException;
 import com.cg.models.Admin;
+import com.cg.models.DatabaseSequence;
 import com.cg.models.UserRating;
 import com.cg.models.Washpack;
 import com.cg.repository.AdminRepo;
@@ -137,6 +144,27 @@ public class AdminServiceImplementation implements AdminService {
 		logger.info(" Successfully got list of ratings");
 		return rating;
 	}
+	
+	@Autowired
+	  private MongoOperations mongoOperations;
+
+
+
+	  public int getSequenceNumber(String sequenceName) {
+	  //get sequence no
+	  Query query = new Query(Criteria.where("id").is(sequenceName));
+	  //update the sequence no
+	  Update update = new Update().inc("seq", 1);
+	  //modify in document
+	  DatabaseSequence counter = mongoOperations.findAndModify(query,
+	  update, options().returnNew(true).upsert(true),
+	  DatabaseSequence.class);
+
+
+
+	  return (int) (!Objects.isNull(counter) ? counter.getSeq() : 1);
+
+	  }
 
 	
 
