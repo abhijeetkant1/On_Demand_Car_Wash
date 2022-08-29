@@ -1,0 +1,93 @@
+
+.title1{
+    
+    border-radius: 0.9rem;
+    width: 50%;
+    margin-left: 30%;
+    padding-bottom: 20px;
+
+}
+
+/* .loginForm{
+    padding-top: 10px;
+    padding-left: 5px;
+    background-color: rgb(31, 120, 130);
+    border-radius: 0.9rem;
+    width: 40%;
+    margin-left: 0%;
+    box-shadow: 13px 12px 13px 12px rgba(46, 39, 39, 0.3);
+    margin-top: 1px;
+} */
+.name{
+    padding: 10px;
+    width: 5cm;
+    text-align: center;
+    margin-left: 30%;}
+
+
+
+.Btn{
+
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 10px;
+    color: white;
+    padding: 9px 40px;
+    background: linear-gradient(to right,rgb(94, 255, 0),green);
+    box-shadow: rgba(0,0,0,0.3)0px 19px 38px,rgba(0, 0, 0, 0.22)0px 15px 12px;
+    margin-left: 20%;
+    text-decoration: none;
+    margin-bottom: 1cm;
+    justify-content: center;
+
+}
+
+.userbg {
+    /* The image used */
+    background-image: url("/images/back.jpg");
+  
+    /* Control the height of the image */
+    min-height: 700px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .title1a{
+    border-radius: 0.9rem;
+    width: 40%;
+    margin-left: -10px;
+    padding-bottom: 20px;
+    color: blue;
+    /* margin-right: 5px; */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  }
+
+  .login-form {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-top: 10px;
+    padding-left: 50px;
+    background-color: white;
+    border-radius: 0.9rem;
+    width: 40%;
+    margin-left: 5%;
+    box-shadow: 13px 12px 13px 12px rgba(46, 39, 39, 0.3);
+    margin-top: 1px;  
+}
+

@@ -1,0 +1,37 @@
+.container {
+  /* background-color: white; */
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-top: 20px;
+  padding-left: 20px;
+  background-color: #000000;
+  border-radius: 0.9rem;
+   width: 20%;
+   margin-left: 10%; 
+  box-shadow: 13px 12px 13px 12px rgba(46, 39, 39, 0.3);
+  margin-top: 1px;
+}
+
+.title {
+  text-align: center;
+}
+
+/* .form-control
+{
+    width: 20px;
+} */
+
+
+.hero-containers {
+  background: url('https://img.freepik.com/premium-photo/generic-brandless-modern-sport-car-with-fire-smoke_110488-1759.jpg?w=900') center center/cover no-repeat; 
+ height: 200vh;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+ object-fit: contain;
+}
+
+/* https://img.freepik.com/premium-photo/generic-brandless-modern-sport-car-with-fire-smoke_110488-1759.jpg?w=900 */

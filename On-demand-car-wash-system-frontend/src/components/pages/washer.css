@@ -1,0 +1,15 @@
+.bookingContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookingContainer .bookings{
+    width: 25%;
+    padding: 10px;
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+    margin: 4px;
+}
